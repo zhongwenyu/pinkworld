@@ -1,0 +1,38 @@
+<include file="Public/header" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>密码修改</h5>
+    </div>
+    <div class="mod-form">
+        <form action="{:U('Admin/Manager/pwdchange')}" method="post" id="form1">
+            <div class="mform-box form-group">
+                <label for="oldpassword" class="mform-lab">请输入旧密码：</label>
+                <input type="password" class="form-control mform-inp1" name="oldpassword" id="oldpassword" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="password" class="mform-lab">请输入新密码：</label>
+                <input type="password" class="form-control mform-inp1" name="password" id="password" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="repassword" class="mform-lab">请再次输入新密码：</label>
+                <input type="password" class="form-control mform-inp1" name="repassword" id="repassword" />
+            </div>
+            <div class="mform-box">
+                <input type="button" onclick="pwd_check()" class="btn btn-primary mform-sub" value="保存" />
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function pwd_check(){
+        if($("#password").val() != $("#repassword").val()){
+            layer.msg("两次密码输入不一致!");
+            return false
+        }
+
+        ajax_add('form1','{:U('Admin/Manager/pwdchange')}');
+    }
+</script>
+</body>
+</html>

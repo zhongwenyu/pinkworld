@@ -1,0 +1,68 @@
+<include file="Public/header" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>公司信息</h5>
+    </div>
+    <div class="mod-form">
+        <form action="{:U('Admin/Manager/data')}" method="post" id="form1">
+            <div class="mform-box form-group">
+                <label for="storename" class="mform-lab">公司名称：</label>
+                <input type="text" class="form-control mform-inp1" name="storename" id="storename" value="{$config.storename}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="recordno" class="mform-lab">备案信息：</label>
+                <input type="text" class="form-control mform-inp1" name="recordno" id="recordno" value="{$config.recordno}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="publicno" class="mform-lab">公安备案信息：</label>
+                <input type="text" class="form-control mform-inp1" name="publicno" id="publicno" value="{$config.publicno}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="storeaddress" class="mform-lab">公司地址：</label>
+                <input type="text" class="form-control mform-inp1" name="storeaddress" id="storeaddress" value="{$config.storeaddress}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="storephone" class="mform-lab">公司电话：</label>
+                <input type="text" class="form-control mform-inp1" name="storephone" id="storephone" value="{$config.storephone}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="servicepos" class="mform-lab">客服职位：</label>
+                <input type="text" class="form-control mform-inp1" name="servicepos" id="servicepos" value="{$config.servicepos}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="servicename" class="mform-lab">客服名称：</label>
+                <input type="text" class="form-control mform-inp1" name="servicename" id="servicename" value="{$config.servicename}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="serviceqq" class="mform-lab">客服QQ：</label>
+                <input type="text" class="form-control mform-inp1" name="serviceqq" id="serviceqq" value="{$config.serviceqq}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="servicephone" class="mform-lab">客服电话：</label>
+                <input type="text" class="form-control mform-inp1" name="servicephone" id="servicephone" value="{$config.servicephone}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="servicecontent" class="mform-lab">服务内容：</label>
+                <textarea class="form-control mform-inp1" name="servicecontent" id="servicecontent">{$config.servicecontent}</textarea>
+            </div>
+            <div class="mform-box form-group">
+                <label for="webtitle" class="mform-lab">网站名称：</label>
+                <input type="text" class="form-control mform-inp1" name="webtitle" id="webtitle" value="{$config.webtitle}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="webkeyword" class="mform-lab">网站关键词：</label>
+                <input type="text" class="form-control mform-inp1" name="webkeyword" id="webkeyword" value="{$config.webkeyword}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="webdesc" class="mform-lab">网站描述：</label>
+                <textarea class="form-control mform-inp1" name="webdesc" id="webdesc">{$config.webdesc}</textarea>
+            </div>
+            <div class="mform-box">
+                <input type="button" onclick="ajax_add('form1','{:U('Admin/Manager/data')}')" class="btn btn-primary mform-sub" value="保存" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.carousel{width:100%;height:100%;overflow: hidden;position: relative;}
+.carousel img,.carousel a{display: block;width:100%;height:100%;}
+.carousel a{position: absolute;left:0;top:0;z-index: 1}
+.carousel_bar{width:100%;position: absolute;left:0;bottom:0;height:50px;background: #000;opacity: 0.6;filter:alpha(opacity=60);z-index: 2}
+.carousel_alt{position: absolute;left:30px;bottom:0;font-size: 16px;color:#fff;font-weight: bold;height:50px;line-height: 50px;font-family: "Microsoft Yahei", "微软雅黑", Arial, STHeiti, Tahoma, Helvetica;z-index: 3}
+.carousel_cicle li,.carousel_left,.carousel_right{cursor: pointer}
+.carousel_left,.carousel_right{position: absolute;width:40px;height:74px;top:50%;margin-top: -37px;z-index: 3}
+.carousel ul{position: absolute;width:100%;bottom:0;height:50px;line-height: 50px;text-align: center;z-index: 4}
+.carousel li{font-size: 25px;display:inline;padding-right: 5px;color:#B0B0B0}

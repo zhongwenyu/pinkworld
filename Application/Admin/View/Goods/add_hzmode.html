@@ -1,0 +1,34 @@
+<include file="Public/header" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>
+            <if condition="$action eq 'add'">新增合作方式
+                <else />编辑合作方式
+            </if>
+        </h5>
+    </div>
+    <div class="mod-form">
+        <form action="{:U('Admin/Goods/add_hzmode')}" method="post" id="form1">
+            <div class="mform-box form-group">
+                <label for="hzname" class="mform-lab">属性名称：</label>
+                <input type="text" class="form-control mform-inp1" name="hzname" id="hzname" value="{$modedetail.hzname}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="typeid" class="mform-lab">选择父分类：</label>
+                <select class="form-control mform-inp1" name="typeid" id="typeid">
+                    <foreach name="goodstype" item="v">
+                        <option value="{$v.id}" <notempty name="modedetail"><if condition="$modedetail['cid'] eq $v['id']">selected="selected"</if></notempty>>{$v.name}</option>
+                    </foreach>
+                </select>
+            </div>
+            <div class="mform-box">
+                <input type="hidden" name="action" value="{$action}" />
+                <input type="hidden" name="id" value="{$id}" />
+                <input type="button" onclick="ajax_add('form1','{:U('Admin/Goods/add_hzmode')}')" class="btn btn-primary mform-sub" value="保存" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

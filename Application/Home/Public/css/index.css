@@ -1,0 +1,76 @@
+@font-face{font-family:FontAwesome;font-weight:normal;font-style:normal;src:url("../font/fontawesome-webfont.eot");src:url("../font/fontawesome-webfont.eot?#iefix") format("eot"),url("../font/fontawesome-webfont.svg#FontAwesome") format("svg"),url("../font/fontawesome-webfont.woff") format("woff"),url("../font/fontawesome-webfont.ttf") format("truetype")}
+.id-title{width:1130px;margin-left:-30px;overflow: hidden}
+.id-title h2 {float: left;height: 65px;}
+.weixin-content .id-title .tab-option a.active {color: #5dcf64;border-bottom-color: #5dcf64;}
+.weixin-content .id-title .tab-option a:hover{color: #5dcf64}
+.live-content .id-title .tab-option a.active {color: #13bfff;border-bottom-color: #13bfff;}
+.live-content .id-title .tab-option a:hover{color: #13bfff}
+.weibo-content .id-title .tab-option a.active {color: #d95c56;border-bottom-color: #d95c56;}
+.weibo-content .id-title .tab-option a:hover{color: #d95c56}
+.id-title .tab-option a {display: inline-block;height: 50px;padding: 0 2px;margin-left: 35px;border-bottom: 4px transparent solid;font-size: 16px;color: #666;}
+a{background: transparent;text-decoration: none;color: #08c;}
+.id-title .tab-option{float: right;height: 65px;line-height: 65px;}
+.id-title h2 .title-font em {display: block;margin-top: -10px;font-size: 16px;font-style: normal;color: #6c6c6c;}
+i, cite, em, var, address, dfn {font-style: italic;}
+h2 {display: block;font-size: 18px;}
+h1, h2, h3 {line-height: 2;font-weight: normal;}
+.id-title h2 .title-font{float: left}
+.id-title h2 .title-font span {display: block;margin-top: -3px;font-size: 22px;font-weight: 600;color: #000;}
+.id-title h2 .title-logo {float: left; margin-right: 10px;height: 60px;line-height: 60px;width: 60px;text-align: center;font-size: 35px;color: #fff;}
+.id-title h2 .title-logo i {display: inline-block;width: 100%;height: 100%;line-height: 60px;border-radius: 50%;font-style: normal}
+.id-title h2 .icon-weixin {background: #5dcf64;}
+.id-title h2 .icon-suitcase {background: #1ca0dc}
+.id-title h2 .icon-video-camera {background: #12bcff}
+.id-title h2 .icon-weibo {background: #f73a4c}
+.title-logo i{font-family: FontAwesome;}{font-family: FontAwesome;font-style: normal;font-weight: normal;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+.id-title h2 .icon-weixin:before,.iconweixin:before{content:""}
+.id-title h2 .icon-suitcase:before{content:""}
+.id-title h2 .icon-video-camera:before,.iconlive:before{content:""}
+.id-title h2 .icon-weibo:before,.iconweibo:before{content:""}
+.live-content .liveDay {height: 31px;left: 233px;position: absolute;top: 3px;width: 116px;}
+
+/*新闻资讯*/
+.xinwen{margin:30px auto 0 auto;width:1160px;color:#666}
+.xinwen a{color:#666;font-size: 14px;line-height: 1.7}
+.xinwen ul li{float: left;width:30%;height:330px;margin-right: 2.5%;overflow: hidden;text-align: left;}
+.xinwen ul li:nth-child(3n){margin-right: 0px;}
+.xinwen ul>li + li + li{margin-right:0px;/*兼容IE8*/}
+.xinwen ul .xinwen_b{width: 35%;}
+.xinwen ul li dl{padding: 10px;}
+.xinwen ul li dl dt,.xinwen ul li dl dd{position:relative; padding: 1px 0;}
+.xinwen ul li dl h3{ padding-bottom: 10px;margin-bottom: 10px; border-bottom: 1px solid #ccc; font-size: 18px;font-weight: 200;line-height: 1}
+.xinwen ul li dl dd b{background-position:-12px 0px;}
+.xinwen ul li dl dd a{width: 75%;display: block; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.xinwen ul li dl dd a img{width: 100%;height: auto;}
+.xinwen_c{position: relative; }
+.xinwen_c h4, .xinwen_c p{position: absolute;right: 0;width:61%;}
+.xinwen_c a{max-width: 36%;height: auto;}
+.xinwen ul li dl .xinwen_c{margin-bottom: 6px;}
+.xinwen ul li dl .xinwen_c a{height: 90px;}
+.xinwen ul li dl .xinwen_c h4{font-size: 16px; top: 0;font-weight: bold; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.xinwen ul li dl .xinwen_c p{top: 30px;height: 60px;overflow: hidden;font-size: 12px; line-height: 20px;}
+.xinwen ul li dl i{position: absolute;top: 2px;right: 0;color: #999;font-size: 12px;font-style: normal}
+.xinwen ul li dl dd i b{background-position:0px 0px;}
+.xinwen ul li dt a:hover,.xinwen ul li dd a:hover{color:#f60}
+.xwh1{color:#666;font-size: 26px;color:#333;font-weight: bold;letter-spacing: 2px}
+
+/*会员中心*/
+.order-table{padding:20px}
+.order-table table{width:100%}
+.order-table table td{border:1px solid #daf3ff;}
+.spa-left{display: inline-block;float: left}
+.spa-right{display: inline-block;float: right}
+.ot-th{padding:15px 20px;background: #eaf8ff}
+.order-goods{border-bottom: 1px solid #daf3ff;padding:10px;overflow: hidden}
+td .order-goods:last-child{border-bottom: 0}
+.og-img{width:80px;height:80px;float: left;display: block}
+.og-info{float: left;margin-left: 10px}
+.og-icon{font-family: FontAwesome!important;font-size: 16px;}
+.og-icon.iconweixin{color:#5dcf64}
+.og-icon.iconweibo{color:#f73a4c}
+.og-icon.iconlive{color:#12bcff}
+.og-info .p1{padding-top: 15px;color:gray;font-size: 13px}
+.spa1{color:#333;font-size: 15px}
+.order-btn1{background: #f54016;color:#fff;padding:5px 15px;border-radius:3px}
+.order-btn1:hover,.order-btn1:visited{color:#fff;}
+.order-empty{text-align: center;font-size: 17px;color:#ea544a;font-weight:bold}

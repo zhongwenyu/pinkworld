@@ -1,0 +1,1 @@
+a:7:{i:0;s:2:"id";i:1;s:8:"signname";i:2;s:7:"addtime";i:3;s:4:"sort";i:4;s:6:"isshow";s:3:"_pk";s:2:"id";s:5:"_type";a:5:{s:2:"id";s:21:"mediumint(8) unsigned";s:8:"signname";s:11:"varchar(30)";s:7:"addtime";s:7:"int(80)";s:4:"sort";s:7:"int(10)";s:6:"isshow";s:10:"tinyint(1)";}}

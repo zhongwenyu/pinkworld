@@ -1,0 +1,30 @@
+<include file="Public/header" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>
+            <if condition="$action eq 'add'">新增下标
+                <else />编辑下标
+            </if>
+        </h5>
+    </div>
+    <div class="mod-form">
+        <form action="{:U('Admin/Goods/add_sign')}" method="post" id="form1">
+            <div class="mform-box form-group">
+                <label for="signname" class="mform-lab">下标名称：</label>
+                <input type="text" class="form-control mform-inp1" name="signname" id="signname" value="{$signdetail.signname}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="sort" class="mform-lab">排序：</label>
+                <input type="text" class="form-control mform-inp1" name="sort" id="sort" <empty name='typedetail'>value="100"<else />value="{$signdetail.sort}"</empty> />
+            </div>
+            <div class="mform-box">
+                <input type="hidden" name="action" value="{$action}" />
+                <input type="hidden" name="signid" value="{$signid}" />
+                <input type="button" onclick="ajax_add('form1','{:U('Admin/Goods/add_sign')}')" class="btn btn-primary mform-sub" value="保存" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

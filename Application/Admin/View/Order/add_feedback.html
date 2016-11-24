@@ -1,0 +1,49 @@
+<include file="Public/header" />
+<include file="Public/ueditor" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>填写反馈信息</h5>
+    </div>
+    <div class="mod-form pb50">
+        <form action="" method="post" id="form1">
+            <div class="mform-box form-group">
+                <label for="feedback" class="mform-lab">信息反馈：</label>
+                <div class="form-text">
+                    <textarea id="goods_content" name="feedback" title=""></textarea>
+                </div>
+            </div>
+            <div class="mform-box">
+                <input type="hidden" name="orderid" value="{$orderid}" />
+                <input type="button" onclick="ajax_add('form1','{:U('Admin/Order/add_feedback')}')" class="btn btn-primary mform-sub" value="保存" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    /*
+     * 图片上传回调函数
+     */
+    function call_back(url,classname){
+        $("input."+classname).val(url).siblings(".del-img").show();
+        $("img."+classname).attr("src",url);
+    }
+
+    /*
+     * 上传图片删除函数
+     */
+    function del_upimg(classname,obj){
+        $.ajax({
+            type:'get',
+            data:{filename:$("input."+classname).val(),action:"del"},
+            url:"{:U('Admin/Uploadify/delImg')}",
+            success:function(data){
+                $("input."+classname).val('');
+                $("img."+classname).attr("src","__PUBLIC__/images/pic-moren.jpg");
+                $(obj).hide();
+            }
+        })
+    }
+</script>
+</html>

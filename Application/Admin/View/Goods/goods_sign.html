@@ -1,0 +1,39 @@
+<include file="Public/header" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>商品下标</h5>
+    </div>
+    <div class="mod-search form-group">
+        <a href="{:U('Admin/Goods/add_sign',array('act'=>'add'))}" class="fr btn btn-primary ma"><span class="glyphicon glyphicon-plus glyadd"></span>新增下标</a>
+    </div>
+    <div class="mod-table">
+        <table cellspacing="0" class="table table-striped table-bordered ">
+            <thead>
+            <tr>
+                <th style="width:100px">ID</th>
+                <th style="width:500px">标志名称</th>
+                <th style="width:200px">排序</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="goodssign" item="v">
+                <tr id="{$v.id}">
+                    <td class="center">{$v.id}</td>
+                    <td class="center">{$v.signname}</td>
+                    <td class="center">
+                        <input type="text" class="form-control" style="height:30px" value="{$v.sort}" onblur="change_sort('goodssign','id','{$v[id]}','sort',this,'{:U('Admin/Api/change_sort')}')" />
+                    </td>
+                    <td>
+                        <a href="{:U('Admin/Goods/add_sign',array('act'=>'edit','signid'=>$v['id']))}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil pr3"></span>编辑</a>
+                        <a href="javascript:void(0);" onclick="del('{:U('Admin/Api/del')}','goodssign','id','{$v[id]}')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash pr3"></span>删除</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

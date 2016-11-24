@@ -1,0 +1,169 @@
+@charset "gb2312";
+/*Default Start*/
+body{font-family:"Microsoft Yahei","ËÎÌו","Arial Narrow";font-size:12px;line-height:22px;_background-image:url(about:blank);_background-attachment:fixed}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,button,textarea,p,th,td,img{margin:0;padding:0}img{border:0}input,button,textarea,select,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}ol,ul,li{list-style:none}i,em,address{font-style:normal}.both{clear:both}.cleardiv{width:100%;height:0;line-height:0;font-size:0;clear:both;zoom:1;overflow:hidden;visibility:hidden;display:block}.clearflt{*zoom:1}.clearflt:after{content:"";display:block;clear:both}a{text-decoration:none;blr:expression(this.onFocus=this.blur())}input,button,select,textarea,a:focus{outline:none}.re{position:relative}.ab{position:absolute}.ov{overflow:visible}.oh{overflow:hidden}header,nav,article,section,aside,footer,address,dialog,figure,menu{display:block}
+/*Background Start*/
+.bgfff{background:#fff}.bgf00{background:#f00}.bg000{background:#000}
+/*Whdth Start*/
+.w980{width:980px;background:#fff;margin-left:auto;margin-right:auto}.w1160{width:1160px;margin-left:auto;margin-right:auto}.w1200{width:1200px;margin-left:auto;margin-right:auto}.findAll{height:0;line-height:0;font-size:0;overflow:hidden;visibility:hidden;width:100%;display:block}
+/*Spacing Start*/
+.mt5{margin-top:5px}.mt10{margin-top:10px}.mt15{margin-top:15px}.mt20{margin-top:20px}.mt25{margin-top:25px}.mt30{margin-top:30px}.mt35{margin-top:35px}.mt40{margin-top:40px}.ml5{margin-left:5px}.ml10{margin-left:10px}.ml15{margin-left:15px}.ml20{margin-left:20px}.mr5{margin-right:5px}.mr10{margin-right:10px}.mr15{margin-right:15px}.mr20{margin-right:20px}.mr25{margin-right:25px}.mr30{margin-right:30px}.mr35{margin-right:35px}.mr40{margin-right:40px}.mlr5{margin-left:5px;margin-right:5px}.mlr10{margin-left:10px;margin-right:10px}.mlr15{margin-left:15px;margin-right:15px}.mlr20{margin-left:20px;margin-right:20px}.pl5{padding-left:5px}.pl10{padding-left:10px}.pl15{padding-left:15px}.pl20{padding-left:20px}.pr5{padding-right:5px}.pr10{padding-right:10px}.pr15{padding-right:15px}.pr20{padding-right:20px}.pb5{padding-bottom:5px}.pb10{padding-bottom:10px}.pb15{padding-bottom:15px}.pb20{padding-bottom:20px}.pb25{padding-bottom:25px}.pt5{padding-top:5px}.pt10{padding-top:10px}.pt15{padding-top:15px}.pt20{padding-top:20px}.pt25{padding-top:25px}.pt30{padding-top:30px}.pt35{padding-top:35px}.pt40{padding-top:40px}.plr5{padding-left:5px;padding-right:5px}.plr10{padding-left:10px;padding-right:10px}.plr15{padding-left:15px;padding-right:15px}.plr20{padding-left:20px;padding-right:20px}.ptb5{padding-top:5px;padding-bottom:5px}.ptb10{padding-top:10px;padding-bottom:10px}.ptb15{padding-top:15px;padding-bottom:15px}.ptb20{padding-top:20px;padding-bottom:20px}.pl30{padding-left:30px}
+/*Float FontSize TextAlign Start*/
+.fl{float:left}.fr{float:right}.fld{float:left;_display:inline}.frd{float:right;_display:inline}.fs12{font-size:12px}.fs14{font-size:14px}.fs16{font-size:16px}.fw{font-weight:bold}.tc{text-align:center}.tr{text-align:right}.tl{text-align:left}.ti{text-indent:2em}
+/*TopToolbar Start*/
+.t4Tool{border-bottom:1px solid #eee;background:#fff}
+.t4Tlc{height:35px}
+.t4Logo{height:100px;overflow:hidden}
+.t4Tlc p.fld{line-height:35px}
+.t4Tlc p.fld a{margin-right:13px;color:#666}
+.t4Tlc p.fld a:hover{color:#d71e1e;text-decoration:none}
+#topInf{color:#666;line-height:35px;padding-left:13px}
+#aili_login_status,#aili_login_status:hover{color:#666;text-decoration:none}
+.t4LgL{width:260px;overflow:hidden}
+.t4LgR{width:710px;overflow:hidden}
+.t4Tool,.t4Tool div{overflow:visible;font-size:12px}
+.t4Tlc a.mRedsc{float:left;width:auto;line-height:30px;margin-top:2px;margin-left:13px;display:inline-block;text-decoration:none;color:#666}
+.t4Tlc a.mRedsc:hover{color:#d71e1e;text-decoration:none}
+.tSrhv2{width:248px;height:24px;overflow:hidden;border:1px solid #eee;margin-top:4px}
+.tSrhv2 span{width:211px;height:24px;float:left;padding:0 5px;display:block;overflow:hidden}
+.tSrhv2 span input{width:211px;height:24px;padding:0;margin:0;line-height:24px;color:#999;border:none;background:none}
+.tSrhv2s{width:27px;height:24px;float:right;background:url(http://images.aili.com/new_index/t_srh.gif) no-repeat center center;border:none;cursor:pointer}
+.t4Tlc .mTdl_w{width:auto;float:left;display:inline-block;line-height:30px;margin-top:2px;position:static;z-index:3100}
+.t4Tlc .mTdl{border:1px solid #fff;border-bottom-color:#eee;position:static;z-index:200;margin-left:0;display:inline-block;line-height:30px;margin-top:4px}
+.t4Tlc .mTdl_Ti{padding:0 6px;color:#666;display:inline-block;position:static;z-index:200;margin-left:0;line-height:30px;cursor:pointer;float:left;width:auto}
+.t4Tlc .mTdl_h{border:1px solid #ddd;border-bottom-color:#fff;-moz-box-shadow:2px -2px 2px #f5f5f5;-webkit-box-shadow:2px -2px 2px #f5f5f5;box-shadow:2px -2px 2px #f5f5f5;position:relative;color:#d71e1e;height:32px;_height:31px;z-index:5100}
+.t4Tlc .mTdl_h1{color:#d71e1e}
+.topFont{color:#f77e85;font-family:Verdana,Geneva,sans-serif}
+.t4Tool #topInf{padding-left:13px}
+#topInf i{font-style:normal}
+.ailiTool{position:absolute;width:92px;height:156px;overflow:hidden;background:url(http://images.aili.com/aili_index/ailiMeu.png) 0 0 no-repeat;z-index:200000;margin-top:-5px;_margin-left:-69px;_margin-top:25px}
+.ailiTool ul{padding-top:6px}
+.ailiTool li{padding:0 8px;height:29px;line-height:29px;overflow:hidden;text-align:left}
+.ailiTool li a{color:#666;text-decoration:none;padding:0 5px;cursor:pointer}
+.ailiTool li a:hover{color:#d90000;text-decoration:none;padding:0 5px;cursor:pointer}
+.ailiTool li a.hcur{color:#d90000}
+
+.t4Tool .bdcs-container .bdcs-search-form-input{width:211px;height:24px;padding:0;line-height:24px;color:#999;border:none;background:none;font-family:"Microsoft Yahei","ËÎÌו","Arial Narrow";font-size:inherit;font-style:inherit;font-weight:inherit}
+.t4Tool .bdcs-container .bdcs-search-form-submit{width:27px;height:24px;float:right;background:url(http://images.aili.com/new_index/t_srh.gif) no-repeat center center;border:none;cursor:pointer}
+.t4Tool .bdcs-container .bdcs-search-form-input:focus{border:0 none}
+input::-webkit-input-placeholder,input:-moz-placeholder,input::-moz-placeholder,input:-ms-input-placeholder{line-height:24px}
+/*LoginPop-up Start*/
+.mTlTck{width:550px;height:300px;background:#fff;border-radius:3px;position:fixed;top:50%;left:50%;margin-left:-275px;margin-top:-150px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+250));_left:expression(eval(document.documentElement.clientWidth/2));z-index:5000;display:none}
+.mTlTck .mTlTck_Ti{width:auto;height:50px;line-height:50px;background:#222;font-size:20px;color:#fff;padding-left:20px;border-radius:3px 3px 0 0}
+.mTlTck .mTlTck_Ti span{width:auto;height:50px;float:left;display:block;overflow:hidden}
+.mTlTck .mTlTck_Ti i{width:50px;height:50px;float:right;background:url(http://images.aili.com/aili_v4/mLoginGb.gif) no-repeat 0 0;font-style:normal;cursor:pointer;display:block;overflow:hidden}
+.mTlTck .mTlTck_Te{width:500px;border:1px solid #ebebeb;border-top:none;border-radius:0 0 3px 3px;height:240px;padding-top:10px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
+.mTlTck .mTlTck_TeL{width:258px;height:230px;border-right:1px solid #eee;float:left}
+.mTlTck .mTlTck_Lk{width:240px;overflow:hidden}
+.mTlTck .mTlTckL_input{width:216px;height:46px;line-height:46px;border:none;background:#ebebeb;color:#666;padding:0 12px;border-radius:3px;font-size:14px}
+.mTlTck .mTlTck_Lk1{width:240px;height:54px;line-height:54px;color:#999;overflow:hidden}
+.mTlTck .mTlTck_Lk1_Jz{width:16px;height:54px;background:url(http://images.aili.com/aili_v4/mLoginTd.gif) no-repeat 0 19px;float:left;margin-right:7px;cursor:pointer;display:block;overflow:hidden}
+.mTlTck .mTlTck_Lk1_Jz_hov{background-position:0 -27px}
+.mTlTck .mTlTck_Lk1_Dl{width:90px;height:54px;float:left;font-size:12px}
+.mTlTck #mTlTck_Lk_Cwts{width:120px;height:54px;float:left;color:#d71e1e;font-size:12px}
+.mTlTck .mTlTckL_input_Dl{width:100px;height:46px;line-height:46px;float:left;display:block;overflow:hidden;margin-right:15px;border-radius:3px;cursor:pointer;font-size:14px;text-align:center;color:#fff;background:#222;border:1px solid #222;-webkit-transition:opacity 0.2s ease-out;-moz-transition:opacity 0.2s ease-out;-ms-transition:opacity 0.2s ease-out;-o-transition:opacity 0.2s ease-out;transition:opacity 0.2s ease-out}
+.mTlTck .mTlTckL_input_Dl_hov{opacity:0.8;-moz-opacity:0.8;-khtml-opacity:0.8;filter:alpha(Opacity=80);text-decoration:none}
+.mTlTck .mTlTckL_wjmm{width:auto;height:46px;line-height:46px;float:left;font-size:12px;color:#666;display:block;overflow:hidden}
+.mTlTck .mTlTckL_wjmm:hover{color:#333;text-decoration:none}
+.mTlTck .mTlTck_TeR{width:216px;float:right;font-size:14px;color:#666;overflow:hidden}
+.mTlTck .mTlTck_TeR1{width:216px;height:32px;line-height:32px;margin-top:17px;overflow:hidden}
+.mTlTck .mTlTck_TeR1a{width:72px;float:left;overflow:hidden}
+.mTlTck .mTdl_logR{width:140px;height:32px;float:left;display:block;overflow:hidden}
+.mTlTck .mTdl_logR a{width:32px;height:32px;float:left;margin-right:8px;display:block;overflow:hidden;-webkit-transition:opacity 0.2s ease-out;-moz-transition:opacity 0.2s ease-out;-ms-transition:opacity 0.2s ease-out;-o-transition:opacity 0.2s ease-out;transition:opacity 0.2s ease-out}
+.mTlTck .mTdl_logR a:hover{opacity:0.8;-moz-opacity:0.8;-khtml-opacity:0.8;filter:alpha(Opacity=80);text-decoration:none}
+.mTlTck .tSina{background:url(http://images.aili.com/aili_v4/mLoginTc.gif) no-repeat -68px -55px}
+.mTlTck .qq{background:url(http://images.aili.com/aili_v4/mLoginTc.gif) no-repeat -110px -55px}
+.mTlTck .mTlTck_TeR2{width:216px;height:82px;line-height:82px;overflow:hidden}
+.mTlTck .mTlTck_TeR3{width:216px;height:32px}
+.mTlTck .mTlTck_TeR3 a{width:80px;height:32px;line-height:32px;color:#fff;margin-left:auto;margin-right:auto;text-align:center;border-radius:2px;background:#d71e1e;-webkit-transition:opacity 0.2s ease-out;-moz-transition:opacity 0.2s ease-out;-ms-transition:opacity 0.2s ease-out;-o-transition:opacity 0.2s ease-out;transition:opacity 0.2s ease-out;display:block;overflow:hidden}
+.mTlTck .mTlTck_TeR3 a:hover{opacity:0.8;-moz-opacity:0.8;-khtml-opacity:0.8;filter:alpha(Opacity=80);text-decoration:none}
+#mTlTck_Icon{width:35px;height:35px;z-index:9999;position:fixed;top:50%;left:50%;margin-left:-18px;margin-top:-18px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+250));_left:expression(eval(document.documentElement.clientWidth/2));display:none}
+.tLoginQk{float:left;overflow:hidden;height:35px;display:inline;padding:0;margin:0}
+.tSinaLogin{float:left;display:inline-block;width:20px;height:17px;overflow:hidden;background:url(http://images.aili.com/login_qk.gif) no-repeat;margin:7px 0 0 0}
+.tQqLogin{float:left;display:inline-block;width:18px;height:19px;overflow:hidden;background:url(http://images.aili.com/login_qk.gif) no-repeat 0 -53px;margin:7px 10px 0 11px}
+.tWeixinLogin{float:left;display:inline-block;width:20px;height:17px;overflow:hidden;background:url(http://images.aili.com/login_qk.gif) no-repeat 0 -107px;margin:7px 0 0 0}
+.tSinaLogin a,.tWeixinLogin a{display:inline-block;width:20px;height:17px}
+.tQqLogin a{display:inline-block;width:18px;height:19px}
+.mTlTck_Bj{min-height:100%}
+.mTlTck_Bj{width:100%;height:100%;background:url(http://images.aili.com/aili_v4/mTlTck_Bj.png) repeat 0 0;position:fixed;top:0;left:0;font-size:0;line-height:0;_width:0;_height:0;z-index:1000;display:none}
+/*Nav Index Start*/
+div.m6InNav{height:65px;background-color:#000;overflow:hidden;font-family:"Microsoft Yahei"}
+.m6InNav b{width:0;height:0;font-size:0;line-height:0}
+.m6InNav ul{width:99999px;height:65px;display:block;overflow:hidden}
+.m6InNav li{width:auto;height:65px;float:left;display:block;overflow:hidden;border-right:1px solid #333;background-color:#000}
+.m6InNav a{color:#ccc;font-size:14px;text-decoration:none}
+.m6InNav a:hover{text-decoration:none}
+.m6InNav .m6ILTi{width:20px;height:55px;font-size:16px;line-height:22px;padding:10px 26px 0 30px;float:left}
+.m6InNav .m6ILTi a{font-size:16px}
+.m6InNav .m6ILN{width:auto;height:55px;float:left;padding-top:10px}
+.m6InNav .m6ILN a{margin-right:34px}
+.m6InNav .m6IL1,.m6InNav .m6IL1 .m6ILTi a,.m6InNav .m6IL1 a:hover{color:#d71e1e}
+.m6InNav .m6IL2,.m6InNav .m6IL2 .m6ILTi a,.m6InNav .m6IL2 a:hover{color:#fa5f7a}
+.m6InNav .m6IL3,.m6InNav .m6IL3 .m6ILTi a,.m6InNav .m6IL3 a:hover{color:#00a44d}
+.m6InNav .m6IL4,.m6InNav .m6IL4 .m6ILTi a,.m6InNav .m6IL4 a:hover{color:#00A0B8}
+.m6InNav .m6IL5,.m6InNav .m6IL5 .m6ILTi a,.m6InNav .m6IL5 a:hover{color:#e21d71}
+.m6InNav li.m6IL5{border-right:none}
+.m6InNav li.m6IL5 .m6ILN{width:350px}
+.m6InNav li.m6IL_hov{background-color:#1E1E1E}
+.m6InNav li.m6IL4 .m6ILN{width:auto}
+.m6InNav li.m6IL4{border-right:1px solid #333}
+.m6IB{width:978px;height:38px;line-height:38px;border:1px solid #ddd;color:#666;background:#eee;margin-left:auto;margin-right:auto;overflow:hidden}
+.m6IB a{color:#666;margin-right:18px}
+.m6IB a:hover{color:#333;text-decoration:none}
+.m6IB span{padding-left:13px;padding-right:15px}
+/*Nav Channel Start*/
+.tNavZV1{height:43px;line-height:43px;text-align:center;color:#d2d2d2;font-size:12px;overflow:hidden}
+.tNavZV1 a{font-size:12px;color:#000;padding:0 11px;display:inline-block;margin-top:15px;height:14px;line-height:14px;float:left;font-family:"Microsoft Yahei";border-right:1px solid #d2d2d2}
+.tNavZV1 a.tFtWtB{font-weight:bold}
+.tNavZV1 a.end{border:none}
+.tNavZV1 a:hover{color:#d71e1e;text-decoration:none}
+.tNavCV1{height:46px;line-height:46px;background:#000;width:100%}
+.tNavCV1c{overflow:hidden;height:46px;background:none}
+.tNavCV1cL{width:635px;font-weight:normal}
+.tNavCV1cL a{display:block;float:left;height:46px;padding:0 12px;font-size:14px;color:#d3d3d3;font-family:"Microsoft Yahei"}
+.tNavCV1cL a.hov{color:#fff;text-decoration:none;font-size:16px}
+.tNavCV1cL a.hov:hover{color:#fff;text-decoration:none}
+.tNavCV1cR{width:315px;font-weight:normal;padding-left:20px;background:url(http://images.aili.com/nav_col.gif) no-repeat left center}
+.tNavCV1cR a,.tNavCV1cR span{color:#d3d3d3;font-size:12px;font-family:"Microsoft Yahei"}
+.tNavCV1cR a{padding:0 5px}
+.tNavCV1cL a:hover,.tNavCV1cR a:hover{text-decoration:none}
+/*TopicFooter Start*/
+.foot{color:#333;background:#fff}
+.foot a{color:#333;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.bott{padding:10px 0;margin:0 auto;text-align:center;color:#000;width:950px;overflow:hidden;font-size:12px}
+.bott a{color:#000;font-size:12px}
+.ftbor{border-top:1px solid rgb(153,153,153)}
+/*Footer Start old*/
+.tFooterV2{background:#333;overflow:hidden;padding:30px 0}
+.tFooterV2 .w980{background:none;color:#ababab}
+.tFooterV2C dl dt{text-align:center;line-height:30px;height:40px;overflow:hidden;width:100%}
+.tFooterV2C dl dt a{margin:0 10px;font-size:14px}
+.tFooterV2C dl dt a,.tFooterV2C dl dt a:hover{color:#fff;text-decoration:none}
+.tFooterV2C dl dd{width:530px;padding-left:350px;height:44px;overflow:hidden;line-height:20px;background:url(http://images.aili.com/auto_index_v8/tflogo.gif) no-repeat 195px 0}
+.tFooterV2C dl dd a,.tFooterV2C dl dd a:hover{color:#969696;text-decoration:none;font-size:12px}
+/*Footer Start*/
+.mFooter_w{width:100%;background:#141414;margin-top:40px}
+.mFooter_T{padding-top:30px;padding-bottom:35px;position:relative}
+.mFooter_T ul{width:100%;background:url(http://images.aili.com/index_v6/mIndexV4_Line.gif) repeat-y 0 0;display:block;overflow:hidden}
+.mFooter_T li{width:170px;color:#fff;padding-left:35px;position:relative;float:left;display:block;overflow:hidden}
+.mFooter_T span{display:block;overflow:hidden}
+.mFooter_T .mFooter_Icon{width:3px;height:18px;background:#a80207;font-size:0;line-height:0;position:absolute;top:0;left:0}
+.mFooter_T h2{width:100%;line-height:1;font-size:22px;font-weight:normal;padding-bottom:15px;display:block}
+.mFooter_T h2 a,.mFooter_T h2 a:hover{color:#fff;text-decoration:none}
+.mFooter_T .mFooter_TList{width:100%;line-height:30px;font-size:14px;overflow:hidden}
+.mFooter_T .mFooter_TList a{color:#999}
+.mFooter_T .mFooter_TList a:hover,.mFooter_BT a:hover,.mFooter_BB a:hover{color:#e60012;text-decoration:none}
+.mFooter_T .mFooter_Ewm{width:220px;height:239px;background:url(http://images.aili.com/index_v6/mIndexV4_Ewm.gif) no-repeat 0 0;position:absolute;top:-20px;right:0}
+.mFooter_B{width:100%;background:#000;overflow:hidden}
+.mFooter_BT_w{width:100%;line-height:72px;color:#999;border-bottom:1px solid #525252;overflow:hidden}
+.mFooter_BT,.mFooter_BB{text-align:center;overflow:hidden}
+.mFooter_BT a{color:#999;padding:0 18px}
+.mFooter_BB{color:#525252;line-height:30px;padding:20px 0}
+.mFooter_BB a{color:#525252}
+/*SearchBottom Start*/
+div.tFSrc{height:auto}
+.tFSrcC{width:384px;margin:0 auto}
+.tFSrcC .bdcs-container .bdcs-search{width:384px;height:43px}
+.tFSrcC .bdcs-search-form-input{width:225px;height:43px;line-height:43px;padding:0 20px 0 45px;border:0;color:#999;background:url(http://images.aili.com/aili_v4/t_bga.gif) no-repeat -444px -164px;border:1px solid #ddd;float:left;display:block;overflow:hidden}
+.tFSrcC .bdcs-container .bdcs-search-form-input:focus{color:#999;border:1px solid #ddd}
+.tFSrcC .bdcs-search-form-submit{width:80px;height:45px;font-family:"Microsoft Yahei","ËÎÌו","Arial Narrow";text-align:center;line-height:45px;color:#ddd;text-indent:0;background:#222;border:0 none;cursor:pointer;float:right;display:block;overflow:hidden}

@@ -1,0 +1,209 @@
+<include file="Public/header" />
+<include file="Public/ueditor" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>
+            <if condition="$action eq 'add'">
+                新增微博
+                <else />编辑微博
+            </if>
+        </h5>
+    </div>
+    <div class="mod-form pb50">
+        <form action="" method="post" id="form1">
+            <div class="mform-box form-group">
+                <label for="name" class="mform-lab">微博名：</label>
+                <input type="text" class="form-control mform-inp1" name="name" id="name" value="{$goods.name}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="updatenum" class="mform-lab">更新次数：</label>
+                <input type="text" class="form-control mform-inp1" name="updatenum" id="updatenum" value="{$goods.updatenum}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="ischecked" class="mform-lab">被选次数：</label>
+                <input type="text" class="form-control mform-inp1" name="ischecked" id="ischecked" value="{$goods.ischecked}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="keytitle" class="mform-lab">微博链接：</label>
+                <input type="text" class="form-control mform-inp1" name="link" id="link" value="{$goods.link}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="keytitle" class="mform-lab">商品标题：</label>
+                <input type="text" class="form-control mform-inp1" name="keytitle" id="keytitle" value="{$goods.keytitle}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="keyword" class="mform-lab">商品关键词：</label>
+                <input type="text" class="form-control mform-inp1" name="keyword" id="keyword" value="{$goods.keyword}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="keyinfo" class="mform-lab">关键词描述：</label>
+                <input type="text" class="form-control mform-inp1" name="keyinfo" id="keyinfo" value="{$goods.keyinfo}" />
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">关键词图片：</label>
+                <input type="text" class="form-control mform-inp1 original_img3" name="keyimg" value="{$goods.keyimg}" />
+                <a href="javascript:void(0)" onclick="GetUploadify('weixin','frm2','1','4MB','call_back','original_img3')" class="btn btn-default mod-btn">上传</a>
+                <a href="javascript:void(0)" onclick="del_upimg('original_img3',this)" class="btn btn-default mod-btn del-img">删除</a>
+                <div class="form-view">
+                    <empty name="goods">
+                        <img src="__PUBLIC__/images/pic-moren.jpg" class="original_img3" />
+                        <else />
+                        <img src="{$goods.keyimg}" class="original_img3" />
+                    </empty>
+                </div>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">所属分类：</label>
+                <div class="mform-addnew">
+                    <foreach name="goodscat" item="v">
+                        <input type="checkbox" name="cat[]" id="cat{$v.id}" value="{$v.id}" class="form-check form-cbox3" <notempty name="goods"><in name="v['id']" value="$goods['catid']">checked</in></notempty> />
+                        <label for="cat{$v.id}" class="btn btn-default">{$v.catname}</label>
+                    </foreach>
+                </div>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">添加属性：</label>
+                <div class="mform-addnew">
+                    <empty name="goods">
+                        <foreach name="goodsspec" item="v">
+                            <div class="mfad-mod">
+                                <input type="checkbox" name="spec[]" id="gho{$v.id}" value="{$v.id}" class="form-check form-cbox2" onclick="inp_check(this,0)" />
+                                <label for="gho{$v.id}" class="btn btn-default">{$v.specname}</label>
+                            </div>
+                        </foreach>
+                        <else />
+                        <foreach name="goodsspec" item="v">
+                            <div class="mfad-mod">
+                                <input type="checkbox" name="spec[]" id="gho{$v.id}" value="{$v.id}" class="form-check form-cbox2" onclick="inp_check(this,0)" <if condition="$specprice[$v['id']]">checked</if> />
+                                <label for="gho{$v.id}" class="btn btn-default">{$v.specname}</label>
+                                <if condition="$specprice[$v['id']]">
+                                    <input type="text" name="price[]" value="{$specprice[$v['id']]['price']}" class="form-control mform-inp2 mr10" placeholder="报价">
+                                </if>
+                            </div>
+                        </foreach>
+                    </empty>
+                </div>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">添加下标：</label>
+                <div class="mform-addnew">
+                    <foreach name="goodssign" item="v">
+                        <input type="checkbox" name="sign[]" id="sign{$v.id}" value="{$v.id}" class="form-check form-cbox3" <in name="v['id']" value="$goods['sign']">checked</in>  />
+                        <label for="sign{$v.id}" class="btn btn-default">{$v.signname}</label>
+                    </foreach>
+                </div>
+            </div>
+            <!--<div class="mform-box form-group">
+                <label class="mform-lab">合作方式：</label>
+                <div class="mform-addnew">
+                    <foreach name="hzmode" item="v">
+                        <input type="checkbox" name="hzid[]" id="hzid{$v.id}" value="{$v.id}" class="form-check form-cbox3" <in name="v['id']" value="$goods['hzid']">checked</in>  />
+                        <label for="hzid{$v.id}" class="btn btn-default">{$v.hzname}</label>
+                    </foreach>
+                </div>
+            </div>-->
+            <div class="mform-box form-group">
+                <label for="instro" class="mform-lab">添加简介：</label>
+                <textarea id="instro" name="instro" class="form-control mform-inp3">{$goods.instro}</textarea>
+            </div>
+            <div class="mform-box form-group">
+                <label for="fans" class="mform-lab">粉丝数：</label>
+                <input type="text" class="form-control mform-inp1" name="fans" id="fans" value="{$goods.fans}" />
+				<span style="display:block;float:left;height:35px;line-height:35px;margin-left:10px">万</span>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">性别：</label>
+                <input type="radio" name="sex" id="isman" class="form-check form-cbox1" value="1" <empty name="goods">checked<else /><if condition="$goods['sex'] eq 0">checked</if></empty> />
+                <label for="isman" class="btn btn-default">男</label>
+                <input type="radio" name="sex" id="iswoman" class="form-check form-cbox1" value="0" <notempty name="goods"><if condition="$goods['sex'] eq 1">checked</if></notempty> />
+                <label for="iswoman" class="btn btn-default">女</label>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">头像：</label>
+                <input type="text" class="form-control mform-inp1 original_img1" name="pic" value="{$goods.pic}" />
+                <a href="javascript:void(0)" onclick="GetUploadify('weixin','frm2','1','4MB','call_back','original_img1')" class="btn btn-default mod-btn">上传</a>
+                <a href="javascript:void(0)" onclick="del_upimg('original_img1',this)" class="btn btn-default mod-btn del-img">删除</a>
+                <div class="form-view">
+                    <empty name="goods">
+                        <img src="__PUBLIC__/images/pic-moren.jpg" class="original_img1" />
+                        <else />
+                        <img src="{$goods.pic}" class="original_img1" />
+                    </empty>
+                </div>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">是否微博认证：</label>
+                <input type="radio" name="isrz" id="isrz" class="form-check form-cbox1" value="1" <empty name="goods">checked<else /><if condition="$goods['isrz'] eq 1">checked</if></empty> />
+                <label for="isrz" class="btn btn-default">是</label>
+                <input type="radio" name="isrz" id="norz" class="form-check form-cbox1" value="0" <notempty name="goods"><if condition="$goods['isrz'] eq 0">checked</if></notempty> />
+                <label for="norz" class="btn btn-default">否</label>
+            </div>
+            <div class="mform-box form-group">
+                <label for="certify" class="mform-lab">认证信息：</label>
+                <input type="text" class="form-control mform-inp1" name="certify" id="certify" value="{$goods.certify}" />
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">是否显示：</label>
+                <input type="radio" name="isshow" id="isshow" class="form-check form-cbox1" value="1" <empty name="goods">checked<else /><if condition="$goods['isshow'] eq 1">checked</if></empty> />
+                <label for="isshow" class="btn btn-default">是</label>
+                <input type="radio" name="isshow" id="noshow" class="form-check form-cbox1" value="0" <notempty name="goods"><if condition="$goods['isshow'] eq 0">checked</if></notempty> />
+                <label for="noshow" class="btn btn-default">否</label>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">是否需要预约：</label>
+                <input type="radio" name="isyy" id="isyy" class="form-check form-cbox1" value="1" <empty name="goods">checked<else /><if condition="$goods['isyy'] eq 1">checked</if></empty> />
+                <label for="isyy" class="btn btn-default">是</label>
+                <input type="radio" name="isyy" id="noyy" class="form-check form-cbox1" value="0" <notempty name="goods"><if condition="$goods['isyy'] eq 0">checked</if></notempty> />
+                <label for="noyy" class="btn btn-default">否</label>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">主要粉丝性别：</label>
+                <input type="radio" name="fansex" id="notsex" class="form-check form-cbox1" value="1" <empty name="goods">checked<else /><if condition="$goods['fansex'] eq 0">checked</if></empty> />
+                <label for="notsex" class="btn btn-default">无</label>
+                <input type="radio" name="fansex" id="man" class="form-check form-cbox1" value="0" <notempty name="goods"><if condition="$goods['fansex'] eq 1">checked</if></notempty> />
+                <label for="man" class="btn btn-default">男</label>
+                <input type="radio" name="fansex" id="woman" class="form-check form-cbox1" value="0" <notempty name="goods"><if condition="$goods['fansex'] eq 2">checked</if></notempty> />
+                <label for="woman" class="btn btn-default">女</label>
+            </div>
+            <div class="mform-box form-group">
+                <label for="contents" class="mform-lab">详情描述：</label>
+                <div class="form-text">
+                    <textarea id="goods_content" name="contents" title=""><notempty name="goods">{$goods.contents}</notempty></textarea>
+                </div>
+            </div>
+            <div class="mform-box">
+                <input type="hidden" name="action" value="{$action}" />
+                <input type="hidden" name="goodsid" value="{$goodsid}" />
+                <input type="button" onclick="ajax_add('form1','{:U('Admin/Goods/add_weibo')}')" class="btn btn-primary mform-sub" value="保存" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    /*
+     * 图片上传回调函数
+     */
+    function call_back(url,classname){
+        $("input."+classname).val(url).siblings(".del-img").show();
+        $("img."+classname).attr("src",url);
+    }
+
+    /*
+     * 上传图片删除函数
+     */
+    function del_upimg(classname,obj){
+        $.ajax({
+            type:'get',
+            data:{filename:$("input."+classname).val(),action:"del"},
+            url:"{:U('Admin/Uploadify/delImg')}",
+            success:function(data){
+                $("input."+classname).val('');
+                $("img."+classname).attr("src","__PUBLIC__/images/pic-moren.jpg");
+                $(obj).hide();
+            }
+        })
+    }
+</script>
+</html>

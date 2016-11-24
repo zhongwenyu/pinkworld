@@ -1,0 +1,22 @@
+.paybox{width:950px;margin: 30px auto;box-shadow: 0 0 2px #8e8e8e;}
+.pay-order{width:890px;padding:30px;border-bottom: 2px solid #e8e8e8;overflow: hidden}
+.spa-left{display: inline-block;float: left;font-size: 17px}
+.spa-right{float: right;display: inline-block;font-size: 17px;}
+.spa-right strong{color: #f5456e;font-size: 25px;}
+.pay-mod{width:890px;padding:0 30px 30px 30px;}
+.pay-mode{display: block;border:2px solid #dcdcdc;margin-top: 30px;padding-left:30px;height:60px;line-height: 60px;color:#333;overflow: hidden}
+.pay-mode:hover,.pay-active{background: #dcdcdc}
+.pay-mode:hover .spa2,.pay-active .spa2{display: inline-block!important;}
+.pay-mode .spa1{font-size: 16px;font-family: tahoma, arial, sans-serif;vertical-align: middle;display: inline-block;}
+.pay-mode .spa2{display: none;vertical-align: middle;float: right;margin-right: 30px;font-size: 16px;color:#333}
+.pay-mode .spa2 strong{color: #f5456e;}
+.pay-mode .iconpay{display: inline-block;width: 28px;height: 28px;vertical-align: middle;}
+.pay-mode .iconpay:before{display: none}
+.alipay{background: url("../images/paymode.png") 0 -112px no-repeat;}
+.weixinpay{background: url("../images/paymode.png") 0 -167px no-repeat;}
+.bankpay{background: url("../images/paymode.png") 0 -140px no-repeat;}
+.pay-check{display: none;background: #ddd;overflow: hidden;padding:15px}
+.pay-url{display: inline-block;float: right;background: #f5456e;color:#fff;padding:12px 24px;border-radius:5px;font-size: 16px}
+.pay-url:hover,.pay-url:visited{color:#fff}
+.iconempty{font-family: FontAwesome!important;font-size: 25px;font-style: normal;display: inline-block;vertical-align: middle}
+.iconempty:before{content: "\f057";}

@@ -1,0 +1,205 @@
+<include file="Common/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/pages_built.css">
+<body>
+<h1 class="logo_seo">
+    <a href="http://www.weiboyi.com/">
+        <img src="__PUBLIC__/images/logo_seo.png" alt="粉天下">
+    </a>
+</h1>
+<div class="container">
+    <div class="inner_box">
+        <!--侧边栏-->
+        <include file="Common/sidebar" />
+        <!--navigation start-->
+        <include file="Common/navbox" />
+        <div class="nav_bottom">
+            <div class="content">
+                <ul>
+                    <li>
+                        <a class="font_size_xxlarge nav_bottom_current" href="{:U('Home/Goods/goodslist',array('typeid'=>2))}">
+                            全部账号</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Home/Goods/goodslist',array('typeid'=>2))}">
+                            <img src="__PUBLIC__/images/nav_voice_2x.png">
+                            名人/明星/名媒</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 主题部分 开始 -->
+        <!--主题部分开始-->
+        <div id="filterItemsContainer">
+            <div class="content text_center">
+                <div class="searchWrap clearfix">
+                    <div class="searchContainer">
+                        <div class="search_inputWrap">
+                            <div class="search_input_close" style="display: none;"></div>
+                            <input type="text" class="search_input" id="search_input" placeholder="请输入账号名称、关键字"></div>
+                        <a href="javascript:void(0);" onclick="show_goodslist(2,'keyword','weixin',this)" class="search_button">搜新浪微博账号</a>
+                    </div>
+                </div>
+
+                <div class="search_filter">
+                    <table width="100%">
+                        <tr style="display: none;">
+                            <th class="categoryFilterTitle">平台</th>
+                            <td colspan="2">
+                                <div class="categoryContent relative">
+                                    <div class="categoryContent_list">
+                                        <ul class="common_category_container clearfix miaopai_filter"></ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="search_grid" data-name="category_filter">
+                            <th class="categoryFilterTitle">常见分类</th>
+                            <td colspan="2">
+                                <div class="categoryContent relative">
+                                    <div class="categoryContent_list" id="morecat">
+                                        <ul class="common_category_container clearfix miaopai_filter">
+                                            <li>
+                                                <a href="javascript:void(0);" onclick="show_goodslist(2,'','',this)" <empty name="catid">class="current"</empty>>不限</a>
+                                            </li>
+                                            <foreach name="cat" item="v">
+                                                <li><a href="/weibo/catid/{$v['id']}" <if condition="$catid eq $v['id']">class="current"</if>>{$v.catname}</a></li>
+                                            </foreach>
+                                        </ul>
+                                        <span class="toggle_btn categoryMore" onclick="show_morecat('morecat')">隐藏<img src="__PUBLIC__/images/arrow_up_normal_2x.png" class="arrow" width="11"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="search_grid" data-name="followers_count_range">
+                            <th class="categoryFilterTitle">粉丝数</th>
+                            <td colspan="2">
+                                <div class="categoryContent clearfix">
+                                    <div class="">
+                                        <ul data-bind="foreach: items" class="price_wrap">
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'','',this)" class="current">不限</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'fans','0-1',this)">1万以下</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'fans','1-5',this)">1-5万</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'fans','5-10',this)">5-10万</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'fans','10-50',this)">10-50万</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'fans','50-100',this)">50-100万</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'fans','以上',this)">100万以上</a></li>
+                                        </ul>
+                                    </div>
+                                    <p class="fr">
+                                        <span class="price_range_wrap">
+                                            <input type="text" class="price_range" id="fans1"> - <input type="text" class="price_range" id="fans2">
+                                            <span>万</span>
+                                        </span>
+                                        <span class="button btn_small_important" onclick="show_goodslist(2,'fans','fans1','fans2','between')"><span class="btn_wrap">确定</span></span>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tbody><tr class="search_grid">
+                            <th>价格</th>
+                            <td>
+                                <div class="categoryContent clearfix">
+                                    <div class="fl">
+                                        <ul data-bind="foreach: items" class="price_wrap">
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'','',this)" class="current">不限</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'ckprice','0-100',this)">100元以下</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'ckprice','100-200',this)">100-200元</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'ckprice','200-1000',this)">200-1000元</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'ckprice','1000-5000',this)">1000-5000元</a></li>
+                                            <li><a href="javascript:void(0);" onclick="show_goodslist(2,'ckprice','以上',this)">5000元以上</a></li>
+                                        </ul>
+                                    </div>
+                                    <p class="fr">
+                                        <span class="price_range_wrap">
+                                            <input type="text" class="price_range" id="price1"> - <input type="text" class="price_range" id="price2">
+                                            <span>元</span>
+                                        </span>
+                                        <span class="button btn_small_important" onclick="show_goodslist(2,'ckprice','price1','price2','between')"><span class="btn_wrap">确定</span></span>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="list_box_filter font_size_small content">
+                <div class="">
+                    <label class="fl choseAll_label" onclick="all_cart(this,2)">
+                        <input type="checkbox">
+                        <span class="valign_middle">全选</span>
+                    </label>
+                    <span class="list_info_totle color_light fl">
+                <img class="valign_middle" width="14" src="__PUBLIC__/images/list_info_2x.png">
+                共计<span id="accountTotal">{$count}</span>个
+            </span>
+                    <div class="list_filter_content">
+                        <label>
+                            <input type="checkbox" onclick="checkbox_goodslist(2,'isrz',this)">
+                            <span>微博认证</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" onclick="checkbox_goodslist(2,'sign',this,4)">
+                            <span>可原创</span>
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            <span>我的收藏</span>
+                        </label>
+                        <div class="executeType">
+                            <i class="valign_top">执行类型</i>
+                                <span><a href="javascript:void(0);" onclick="show_goodslist(2,'','',this,'color_high_light')" class="color_high_light">不限</a>
+                                    <a href="javascript:void(0);" onclick="show_goodslist(2,'isyy',1,this,'color_high_light')">需预约</a>
+                                    <a href="javascript:void(0);" onclick="show_goodslist(2,'isyy',0,this,'color_high_light')">无需预约</a>
+                                </span>
+                        </div>
+                        <div class="list_filter_category">
+                            <a class="color_default" href="javascript:void(0)" onclick="show_goodslist(2,'','',this)">粉丝量</a>
+                        </div>
+                        <div class="list_filter_category list_sort_box">
+                            <a href="javascript:void(0)" onclick="show_order(this)" class="list_sort_default valign_middle">
+                                <span data-bind="text: getActiveName()">默认排序</span>
+                                <img class="fr" width="11" src="__PUBLIC__/images/arrow_up_normal_2x.png">
+                            </a>
+                            <ul class="list_sort_content" style="display: none;">
+                                <li data-bind="">
+                                    <a href="javascript:void(0);" onclick="show_goodslist(2,'order','ckprice',this)">
+                                        <span>价格从低到高</span>
+                                    </a>
+                                    <a href="javascript:void(0);" onclick="show_goodslist(2,'order','reading',this)">
+                                        <span>阅读量从高到低</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <script>
+                            function show_order(obj){
+                                if(!$(obj).next("ul").is(":hidden")){
+                                    $(obj).next("ul").hide();
+                                }else{
+                                    $(obj).next("ul").show();
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div id="accountListContainer" class="account_list">
+                <div class="loading_mask" id="loading"></div>
+                <table class="list_table" width="100%">
+                    <if condition="$typeid eq 1">
+                        <include file="Goods/ajax_weixin" />
+                        <elseif condition="$typeid eq 2" />
+                        <include file="Goods/ajax_weibo" />
+                        <elseif condition="$typeid eq 3" />
+                        <include file="Goods/ajax_live" />
+                    </if>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Common/footer" />
+</body>
+</html>

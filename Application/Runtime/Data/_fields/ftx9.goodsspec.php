@@ -1,0 +1,1 @@
+a:7:{i:0;s:2:"id";i:1;s:8:"specname";i:2;s:4:"sort";i:3;s:6:"isshow";i:4;s:6:"typeid";s:3:"_pk";s:2:"id";s:5:"_type";a:5:{s:2:"id";s:21:"mediumint(8) unsigned";s:8:"specname";s:11:"varchar(90)";s:4:"sort";s:7:"int(20)";s:6:"isshow";s:10:"tinyint(1)";s:6:"typeid";s:7:"int(10)";}}

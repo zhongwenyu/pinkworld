@@ -1,0 +1,182 @@
+<include file="Common/min-header" />
+<body>
+<!--侧边栏-->
+<include file="Common/sidebar" />
+<!--navigation start-->
+<notempty name="user">
+    <div class="header_info">
+        <div class="content">
+            <span class="header_info_name">您好：<a href="{:U('Home/User/index')}"><span id="crt_username">{$user.account}</span></a></span>
+            <a href="{:U('Home/User/index')}">会员中心</a>
+            <a href="{:U('Home/User/lgout')}">退出</a>
+        </div>
+    </div>
+</notempty>
+<div class="nav_box">
+    <div class="content clearfix">
+        <div class="nav_top">
+            <a class="logo2x fl" href="{:U('Home/Index/index')}"><img width="180" src="__PUBLIC__/images/logo_2x.png"></a>
+            <div class="nav_list_box fl">
+                <a class="nav_list_current" href="javascript:void(0)">
+                    <img class="icon" width="29" src="__PUBLIC__/images/home_user.png"/>
+                    <span>会员中心</span>
+                    <img class="arrow_down_nav valign_middle" width="21" src="__PUBLIC__/images/nav_arrow_down_2x.png">
+                </a>
+                <div class="nav_list_all">
+                    <dl>
+                        <dt>
+                            <img width="19" src="__PUBLIC__/images/nav_location_2x.png">
+                            <a href="{:U('Home/User/index')}">查看账号</a>
+                        </dt>
+                        <dd>
+                            <a href="{:U('Home/Goods/goodslist',array('typeid'=>1))}" target="_blank">微信公众号</a>
+                            <i></i>
+                            <a href="{:U('Home/Goods/goodslist',array('typeid'=>2))}" target="_blank">新浪微博</a>
+                            <i></i>
+                            <a href="{:U('Home/Goods/goodslist',array('typeid'=>3))}" target="_blank">视频自媒体</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img width="18" src="__PUBLIC__/images/nav_calendar_2x.png">
+                            <a href="{:U('Home/User/index')}" target="_blank">订单管理</a>
+                        </dt>
+                        <dd>
+                            <a href="{:U('Home/User/index')}" target="_blank">待支付</a>
+                            <i></i>
+                            <a href="{:U('Home/User/index')}" target="_blank">待执行</a>
+                            <i></i>
+                            <a href="{:U('Home/User/index')}" target="_blank">已完成</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img width="14" src="__PUBLIC__/images/nav_paper_2x.png" class="paper">
+                            <a class="nav_clear_border" href="{:U('Home/Cart/cart')}" target="_blank">选号车</a>
+                        </dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img width="15" src="__PUBLIC__/images/nav_user_2x.png" class="user">
+                            <a href="{:U('Home/User/index')}" target="_blank">个人中心</a>
+                        </dt>
+                        <dd>
+                            <a target="_blank" href="{:U('Home/User/index')}">密码修改</a>
+                            <i></i>
+                            <a target="_blank" href="{:U('Home/User/index')}">资料编辑</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="nav_top_link fl">
+                <a target="" href="{:U('Home/Goods/goodslist',array('typeid'=>1))}" class="color_high_light">微信公众号<img src="__PUBLIC__/images/new_red.png" width="28" class="tags"></a>
+                <a target="" href="{:U('Home/Goods/goodslist',array('typeid'=>2))}" class="color_high_light">新浪微博<img src="__PUBLIC__/images/new_red.png" width="28" class="tags"></a>
+                <a target="" href="{:U('Home/Goods/goodslist',array('typeid'=>3))}" class="color_high_light">视频自媒体<img src="__PUBLIC__/images/new_red.png" width="28" class="tags"></a>
+                <a target="" href="">朋友圈</a>
+                <i></i>
+                <a target="" href="">微播圈</a>
+                <i></i>
+                <a target="" href="">活动管理</a>
+                <i></i>
+            </div>
+            <div class="nav_top_btn">
+                <a target="_blank" href="{:U('Home/Cart/cart')}">创建活动</a>
+                <a target="_blank" href="">充值</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="location">
+    <div class="w1200">
+        当前位置：
+        <a href="{:U('Home/Index/index')}">
+            首页
+        </a>
+        &gt;
+        <a href="{:U('Home/User/index')}">
+            用户中心
+        </a>
+        &gt;
+        <span>
+                    </span>
+    </div>
+</div>
+
+<div class="w1198 bor">
+    <div id="member_header">
+        <div class="member_radio bor_bottom">
+            <i class="iconfont icondanger"></i>
+            <div class="member_radio_info"></div>
+        </div>
+    </div>
+
+    <div class="content_bottom content_wrap bor_top clearfix">
+        <!-- 左边导航 -->
+        <div class="left_nav bor_right">
+            <ul>
+                <li>
+                    <span>
+                        <em>
+                            用户中心
+                        </em>
+                    </span>
+                    <dl>
+                        <dd class="cur">
+                            <a href="{:U('Home/User/index')}">
+                                <i class="iconfont iconuser"></i>
+                                首页</a>
+                        </dd>
+                        <dd class="">
+                            <a href="{:U('Home/User/useredit')}" target="mainBox">
+                                <i class="iconfont iconedit"></i>
+                                资料编辑</a>
+                        </dd>
+                        <dd>
+                            <a href="{:U('Home/User/pwdchange')}" target="mainBox">
+                                <i class="iconfont iconlock"></i>
+                                密码修改</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <span>
+                        <em>
+                            我的订单
+                        </em>
+                    </span>
+                    <dl>
+                        <dd class="">
+                            <a href="{:U('Home/User/orderlist',array('paystatus'=>0))}" target="mainBox">
+                                <i class="iconfont iconpay"></i>
+                                待支付订单
+                            </a>
+                        </dd>
+                        <dd class="">
+                            <a href="{:U('Home/User/orderlist',array('isback'=>0))}" target="mainBox">
+                                <i class="iconfont iconwork"></i>
+                                执行中订单
+                            </a>
+                        </dd>
+                        <dd class="">
+                            <a href="{:U('Home/User/orderlist',array('isback'=>1))}" target="mainBox">
+                                <i class="iconfont iconover"></i>
+                                已完成订单
+                            </a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <!-- 内容 begin-->
+        <!-- 内容 begin-->
+        <div class="tender_content bor_left">
+            <iframe name="mainBox" frameborder="0" width="1016px" scrolling="yes" height="900px" src="{:U('Home/User/firstpage')}"></iframe>
+        </div>
+        <!-- 内容 end-->
+    </div>
+</div>
+<include file="Common/footer" />
+</body>
+</html>

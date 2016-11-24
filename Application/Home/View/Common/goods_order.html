@@ -1,0 +1,104 @@
+<div class="account_info_box">
+    <!--基础信息 -->
+    <p class="weChat_account_info">
+        <em>
+            <if condition="$goods['typeid'] eq 1">
+                <span class="icon_list_platform icon_list_wechat valign_middle"></span>
+                <elseif condition="$goods['typeid'] eq 2"/>
+                <span class="icon_list_platform icon_list_weibo valign_middle"></span>
+                <elseif condition="$goods['typeid'] eq 3"/>
+                <span class="icon_list_platform icon_list_miaopai valign_middle"></span>
+            </if>
+            <if condition="$goods['isrz']">
+                <if condition="$goods['typeid'] eq 1">
+                    <span class="account_wechat_certified"></span>
+                    <elseif condition="$goods['typeid'] eq 2"/>
+                    <img class="valign_middle" width="17" src="__PUBLIC__/images/v_weibo_2x.png">
+                    <elseif condition="$goods['typeid'] eq 3"/>
+                    <img class="valign_middle" width="17" src="__PUBLIC__/images/v_miaopai_2x_v2.png">
+                </if>
+
+            </if>
+            <b>{$goods.name}</b>
+            <foreach name="goods['sign']" item="k">
+                <span class="account_original text_center valign_middle">{$k}</span>
+            </foreach>
+        </em>
+    </p>
+    <ul class="video_account_data">
+        <li class="clearfix">
+            <span class="color_light line_title">粉丝数</span>
+            <em>172万</em>
+        </li>
+        <li class="clearfix">
+            <span class="color_light line_title">参考报价</span>
+            <div class="fans">
+                <ul class="video_release_price_list text_center">
+                    <li>
+                        <p>原创视频+发布</p>
+                        <p>
+                            <span class="money font_size_xxlarge color_high_light">187060</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p>视频发布</p>
+                        <p>
+                            <span class="money font_size_xxlarge color_high_light">187060</span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+    <!-- 功能按钮 加入购物车等 -->
+
+    <p class="clearfix">
+        <a href="javascript:void(0);" onclick="add_cart({$goods.id},{$goods.typeid},event,190)" class="button btn_large_important fr"><span class="btn_wrap">加入选号车</span> </a>
+    </p>
+    <!-- 功能按钮 加入购物车 end-->
+
+</div>
+<div class="weChat_profile">
+    <table>
+        <tbody><tr>
+            <th>功能简介</th>
+            <td>{$goods.instro}</td>
+        </tr>
+        <tr>
+            <th>认证信息</th>
+            <td>{$goods.certify}</td>
+        </tr>
+        <tr>
+            <th>近30天被选次数</th>
+            <td><span>{$goods.ischecked}</span>次</td>
+        </tr>
+        <tr>
+            <th>配合度<a class="icon_question ads_tips  js_tips js_tips_2" href="javascript:void(0)"></a></th>
+            <td class="peihedu">
+                        <span class="snbt_data_num">
+                            <i class="arrow"></i>
+                            <span>高</span>
+                        </span>
+            </td>
+        </tr>
+        <tr style="display: none;">
+            <th>执行率<a class="icon_question ads_tips js_tips js_tips_3" href="javascript:void(0)"></a></th>
+            <td><span>暂无数据</span></td>
+        </tr>
+        <tr>
+            <th>分类</th>
+            <td>
+                <div>
+                    <foreach name="goods['catid']" item="t">
+                        <span>{$t}&nbsp;</span>
+                    </foreach>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>图文热词</th>
+            <td id="js_keyword_notes" style="position: relative"><img src="{$goods.keyimg}" style="display: block;position: absolute" /></td>
+        </tr>
+        </tbody></table>
+</div>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css" />
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/style.js"></script>
+    <title></title>
+</head>
+<body>
+<div id="lgbg">
+    <div class="id-login">
+        <h1>粉天下后台管理系统</h1>
+        <div class="alert alert-warning idwaring ml40" id="warning">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            请输入账号和密码！</div>
+        <div class="input-group input-group-lg idiput ml40 mb20">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+            <input type="text" class="form-control" placeholder="请输入账号" name="username" id="username" />
+        </div>
+        <div class="input-group input-group-lg idiput ml40 mb20">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+            <input type="password" class="form-control" placeholder="请输入密码" name="password"  id="password" />
+        </div>
+        <div class="input-group input-group-lg idiput ml40 mb10">
+            <input type="text" class="form-control" placeholder="请输入验证码" name="verify" id="verify" />
+            <span class="input-group-addon verity"><img src="{:U('Admin/verify')}" id="verify_repeat" /></span>
+        </div>
+        <div class="input-remember ml40">
+            <input type="checkbox" id="inpRem"/>
+            <label for="inpRem">记住账号</label>
+        </div>
+        <input type="button" id="lg_sub" class="btn btn-primary idsub" value="登陆" />
+    </div>
+</div>
+<script>
+    //登陆验证
+    $("#lg_sub").click(function(){
+        var username=$("#username").val();
+        var password=$("#password").val();
+        var verify=$("#verify").val();
+
+        if(username == ''){
+            login_info("账户不能为空！",'username');
+            $("#username").focus();
+            return false;
+        }
+
+        if(password == ''){
+            login_info("密码不能为空！",'password');
+            $("#password").focus();
+            return false;
+        }
+
+        if(verify == ''){
+            login_info("验证码不能为空！",'verify');
+            $("#verify").focus();
+            return false;
+        }
+
+        //登录异步判断
+        $.ajax({
+            type:'POST',
+            url:"{:U('Admin/login')}",
+            dataType:'json',
+            data:{
+                "username":username,
+                "password":password,
+                "verify":verify
+            },
+            success:function(data){
+                if(data.status==1){
+                    top.location.href = data.url;
+                }else{
+                    if(data.status==3){
+                        $("#verify").focus();
+                        login_info(data.msg,'verify');
+                    }else{
+                        $("#username").focus();
+                        login_info(data.msg,'username');
+                    }
+                }
+            }
+        });
+    });
+
+    //登录状态说明
+    function login_info(str,name){
+        $(".input-group").removeClass("has-error");
+        $("#warning").html(str).removeClass("alert-warning").addClass("alert-danger");
+        if(name){
+            $('input[name='+name+']').parent(".input-group").addClass("has-error");
+        }
+    }
+
+    //验证码刷新
+    $("#verify_repeat").click(function(){
+        $("#verify_repeat").attr("src","{:U('Admin/verify')}"+"/"+Math.floor(Math.random()*100));
+    });
+</script>
+</body>
+</html>

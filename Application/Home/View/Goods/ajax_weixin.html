@@ -1,0 +1,102 @@
+<empty name="list">
+    <div class="content">
+        <div class="search_station_wrap clearfix">
+            <ul data-bind="" class="clearfix">
+                <li>
+                    <img src="__PUBLIC__/images/list_info_2x.png" width="14" class="valign_middle">
+                    您设置的账号要求下，可以推荐的优质账号过少，您可以清空或重新设置账号要求
+                </li>
+            </ul>
+        </div>
+    </div>
+</empty>
+<table class="list_table" width="100%">
+    <foreach name="list" item="v">
+        <tbody>
+        <tr>
+            <td style="width:30px" class="account_check">
+                <input type="checkbox" name="cart{$v.id}" data-id="{$v.id}" onclick="checkbox_cart({$v.id},1,this,event,190)">
+            </td>
+            <td width="300">
+                <div class="account_info">
+                    <p class="account_head">
+        <span>
+            <a href="/weixin/{$v['id']}" style="width: 56px; height: 56px; overflow: hidden; display: block;" onclick="cart_fly('{$v.id}')">
+                <img class="valign_middle js_avatar" id="goodsimg{$v['id']}" src="{$v.pic}" style="width: 56px; height: auto;">
+            </a>
+        </span>
+                        <if condition="$v['isyy'] eq 1">
+                            <span class="account_order"></span>
+                        </if>
+                    </p>
+                    <div class="account_info_wrap">
+                        <div class="account_info_others">
+                            <p class="account_name">
+                                <span class="icon_list_platform icon_list_wechat valign_middle"></span>
+                                <if condition="$v['isrz'] eq 1"><span class="account_wechat_certified"></span></if>
+                                <a href="/weixin/{$v['id']}" target="_blank">{$v.name}</a>
+                            </p>
+                            <div class="account_weixin">
+                                <a title="点击查看详情" href="javascript:void(0);" onclick="show_code('{$v['code']}')" class="color_default js_showCodeDetail">
+                                    <img width="15" class="valign_middle" src="__PUBLIC__/images/qr_code_2x.png">
+                                </a>
+                                <span class="account_weixin_name font_size_small valign_middle">{$v.wechat}</span>
+                            </div>
+                            <notempty name="v['sign']">
+                                <div class="font_size_small">
+                                    <foreach name="v['sign']" item="s">
+                                        <a class="account_original text_center valign_middle" href="javascript:">{$sign[$s['sign']]['signname']}</a>
+                                    </foreach>
+                                </div>
+                            </notempty>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td width="75">
+                <div class="account_others">
+                    <span class="account_others_title">粉丝数</span>
+                    <span class="account_others_content">{$v.fans}万</span>
+                </div>
+            </td>
+            <td width="480">
+                <table class="account_price">
+                    <thead>
+                    <tr>
+                        <th width="30%"><span class="account_others_title">位置</span></th>
+                        <th class="price_reference_title" width="55%"><span class="account_others_title">参考报价</span></th>
+                        <th width="15%"><span class="account_others_title">阅读量</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <foreach name="v['spec']" item="p">
+                        <tr>
+                            <td><span>{$spec[$p['specid']]['specname']}</span></td>
+                            <td class="price_reference_content"><span class="color_high_light"><b class="money">{$p.price}</b></span></td>
+                            <td><span>{$p.reading|return_wan=###}</span></td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+            </td>
+            <td width="35"></td>
+            <td>
+                <div class="account_others">
+                    <span class="account_others_title">订单数</span>
+                    <div class="account_others_content account_use_times">
+                        <span>月订单：</span><em>{$v.monthorder}</em>次
+                    </div>
+                </div>
+            </div>
+            </td>
+            <td>
+                <div class="account_others">
+                    <span class="account_others_title">配合度</span>
+                    <a href="/weixin/{$v['id']}" target="_blank" class="account_others_content account_addimg relative"><img width="13" src="__PUBLIC__/images/group_2x.png">账号详情</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </foreach>
+</table>
+<div style="width:100%;text-align: center;overflow: hidden">{$page}</div>

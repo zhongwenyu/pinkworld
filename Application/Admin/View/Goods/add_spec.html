@@ -1,0 +1,41 @@
+<include file="Public/header" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>新增属性</h5>
+    </div>
+    <div class="mod-form">
+        <form action="{:U('Admin/Goods/add_spec')}" method="post" id="form1">
+            <div class="mform-box form-group">
+                <label for="specname" class="mform-lab">属性名称：</label>
+                <input type="text" class="form-control mform-inp1" name="specname" id="specname" value="{$specdetail.specname}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="pid" class="mform-lab">选择父分类：</label>
+                <select class="form-control mform-inp1" name="typeid" id="typeid">
+                    <foreach name="goodstype" item="v">
+                        <option value="{$v.id}" <notempty name="specdetail"><if condition="$specdetail['cid'] eq $v['id']">selected="selected"</if></notempty>>{$v.name}</option>
+                    </foreach>
+                </select>
+            </div>
+            <div class="mform-box form-group">
+                <label for="sort" class="mform-lab">排序：</label>
+                <input type="text" class="form-control mform-inp1" name="sort" id="sort" <empty name='specdetail'>value="100"<else />value="{$specdetail.sort}"</empty> />
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">是否显示：</label>
+                <input type="radio" name="isshow" id="isshow" class="form-check form-cbox1" value="1" <empty name="specdetail">checked<else /><if condition="$specdetail['isshow'] eq 1">checked</if></empty> />
+                <label for="isshow" class="btn btn-default">是</label>
+                <input type="radio" name="isshow" id="noshow" class="form-check form-cbox1" value="0" <notempty name="specdetail"><if condition="$specdetail['isshow'] eq 0">checked</if></notempty> />
+                <label for="noshow" class="btn btn-default">否</label>
+            </div>
+            <div class="mform-box">
+                <input type="hidden" name="action" value="{$action}" />
+                <input type="hidden" name="id" value="{$id}" />
+                <input type="button" onclick="ajax_add('form1','{:U('Admin/Goods/add_spec')}')" class="btn btn-primary mform-sub" value="保存" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<include file="Public/header" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>商品分类</h5>
+    </div>
+    <div class="mod-search form-group">
+        <a href="{:U('Admin/Goods/add_cat',array('act'=>'add'))}" class="fr btn btn-primary ma"><span class="glyphicon glyphicon-plus glyadd"></span>新增分类</a>
+    </div>
+    <div class="mod-table">
+        <table cellspacing="0" class="table table-striped table-bordered ">
+            <thead>
+            <tr>
+                <th style="width:100px">ID</th>
+                <th style="width:500px">分类名称</th>
+                <th style="width:100px">是否显示</th>
+                <th style="width:200px">排序</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="0">
+                <td class="center">0</td>
+                <td><span class="glyphicon glyphicon-plus merge-add" onclick="merge_add(this)"></span>平台分类</td>
+                <td class="center"></td>
+                <td class="center"></td>
+                <td></td>
+            </tr>
+            <foreach name="platcat" item="k">
+                <tr id="0-{$k.id}" style="display: none">
+                    <td class="center">{$k.id}</td>
+                    <td class="merge2"><span class="merge-mod">|—&nbsp;</span>{$k.catname}</td>
+                    <td class="center">
+                        <img src="__PUBLIC__/images/<if condition='$k[isshow]'>yes.png<else/>no.png</if>" onclick="change_show('goodscat','id','{$k[id]}','isshow','{:U('Admin/Api/change_show')}',this)" style="cursor: pointer" />
+                    </td>
+                    <td class="center">
+                        <input type="text" class="form-control" style="height:30px" value="{$k.sort}" onblur="change_sort('goodscat','id','{$k[id]}','sort',this,'{:U('Admin/Api/change_sort')}')" />
+                    </td>
+                    <td>
+                        <a href="{:U('Admin/Goods/add_cat',array('act'=>'edit','catid'=>$k['id']))}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil pr3"></span>编辑</a>
+                        <a href="javascript:void(0);" onclick="del('goodscat','id','{$k[id]}')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash pr3"></span>删除</a>
+                    </td>
+                </tr>
+            </foreach>
+            <foreach name="v['child']" item="k">
+                <tr id="{$v.id}-{$k.id}" style="display: none">
+                    <td class="center">{$k.id}</td>
+                    <td class="merge2"><span class="merge-mod">|—&nbsp;</span>{$k.catname}</td>
+                    <td class="center">
+                        <img src="__PUBLIC__/images/<if condition='$k[isshow]'>yes.png<else/>no.png</if>" onclick="change_show('goodscat','id','{$k[id]}','isshow','{:U('Admin/Api/change_show')}',this)" style="cursor: pointer" />
+                    </td>
+                    <td class="center">
+                        <input type="text" class="form-control" style="height:30px" value="{$k.sort}" onblur="change_sort('goodscat','id','{$k[id]}','sort',this,'{:U('Admin/Api/change_sort')}')" />
+                    </td>
+                    <td>
+                        <a href="{:U('Admin/Goods/add_cat',array('act'=>'edit','catid'=>$k['id']))}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil pr3"></span>编辑</a>
+                        <a href="javascript:void(0);" onclick="del('{:U('Admin/Api/del')}','goodscat','id','{$k[id]}')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash pr3"></span>删除</a>
+                    </td>
+                </tr>
+            </foreach>
+            <foreach name="list" item="v">
+                <tr id="{$v.id}">
+                    <td class="center">{$v.id}</td>
+                    <td><span class="glyphicon glyphicon-plus merge-add" onclick="merge_add(this)"></span>{$v.name}</td>
+                    <td class="center"></td>
+                    <td class="center">
+                        <input type="text" class="form-control" style="height:30px" value="{$v.sort}" onblur="change_sort('goodscat','id','{$v[id]}','sort',this,'{:U('Admin/Api/change_sort')}')" />
+                    </td>
+                    <td></td>
+                </tr>
+                <foreach name="v['child']" item="k">
+                    <tr id="{$v.id}-{$k.id}" style="display: none">
+                        <td class="center">{$k.id}</td>
+                        <td class="merge2"><span class="merge-mod">|—&nbsp;</span>{$k.catname}</td>
+                        <td class="center">
+                            <img src="__PUBLIC__/images/<if condition='$k[isshow]'>yes.png<else/>no.png</if>" onclick="change_show('goodscat','id','{$k[id]}','isshow','{:U('Admin/Api/change_show')}',this)" style="cursor: pointer" />
+                        </td>
+                        <td class="center">
+                            <input type="text" class="form-control" style="height:30px" value="{$k.sort}" onblur="change_sort('goodscat','id','{$k[id]}','sort',this,'{:U('Admin/Api/change_sort')}')" />
+                        </td>
+                        <td>
+                            <a href="{:U('Admin/Goods/add_cat',array('act'=>'edit','catid'=>$k['id']))}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil pr3"></span>编辑</a>
+                            <a href="javascript:void(0);" onclick="del('{:U('Admin/Api/del')}','goodscat','id','{$k[id]}')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash pr3"></span>删除</a>
+                        </td>
+                    </tr>
+                </foreach>
+            </foreach>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

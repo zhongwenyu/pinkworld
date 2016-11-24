@@ -1,0 +1,91 @@
+<div style="" class="createReservation_box">
+    <p class="js_doc_require text_right">注<b class="color_high_light">*</b>为必填项</p>
+    <table style="" class="documentTable">
+        <tbody style="">
+        <tr class="requireditem field_hidden">
+            <th>
+                <span>投放平台</span>
+            </th>
+            <td class="js_platformLabel">微信公众号</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr class="requireditem">
+            <th>
+                <span class="js_title">参考执行价<span class="reservation_document_title_colon">：</span></span>
+            </th>
+            <td colspan="2" class="goods-price"><em>¥</em><em id="goods_price{$v['id']}">{$v['goods']['spec'][0]['price']}</em></td>
+            <input type="hidden" name="goods{$v['id']}[goodsprice]" id="goodsprice{$v['id']}" value="{$v['goods']['spec'][0]['price']}" />
+        </tr>
+        <!--<tr class="requireditem">
+            <th>
+                <span class="js_title">合作形式<span class="reservation_document_title_colon">：</span></span>
+            </th>
+            <td>
+                <foreach name="v['goods']['hzid']" item="g">
+                    <label for="hzid{$g['id']}"><input value="{$g.id}" title="合作形式" name="goods{$v['id']}[hzid][]" id="hzid{$g['id']}" type="checkbox" />{$g.hzname}</label>
+                </foreach>
+            </td>
+            <td></td>
+        </tr>-->
+        <tr class="requireditem">
+            <th>
+                <span>发布位置</span>
+            </th>
+            <td>
+                <foreach name="v['goods']['spec']" item="g" key="k">
+                    <label for="spec{$g['id']}"><input title="发布位置" <if condition="$k eq 0">checked="checked"</if> value="{$g.id}" data-price="{$g.price}" id="spec{$g['id']}" name="goods{$v['id']}[spec]" type="radio" onchange="add_price(this,{$v.id})" />{$g.specname}</label>
+                </foreach>
+            </td>
+            <td></td>
+        </tr>
+        <tr class="requireditem">
+            <th>
+                <span>推广时间</span>
+            </th>
+            <td>
+                <input type="text" title="推广开始时间" class="get-time" name="goods{$v.id}[begin]" id="goods{$v.id}begin">
+                <span>—</span>
+                <input type="text" title="推广结束时间" class="get-time" name="goods{$v.id}[over]" id="goods{$v.id}over">
+            </td>
+            <td></td>
+        </tr>
+        <tr class="requireditem">
+            <th>
+                <span>反馈时间</span>
+            </th>
+            <td>
+                <input type="text" title="反馈时间" class="get-time" name="goods{$v.id}[back]" id="goods{$v.id}back">
+            </td>
+            <td></td>
+        </tr>
+        <tr class="requireditem">
+            <th scope="row" align="right" valign="top">
+                <span class="js_title">需求描述</span>
+            </th>
+            <td style="" class="td_multi-line">
+                <textarea name="goods{$v['id']}[content]" title="需求描述" class="require-text"></textarea>
+                <p class="validateItem">
+                    <label class="validateTips" for="">请详细描述您的需求,让名人/媒体知道您想让他干什么，越具体越好，请不要超过5000字</label>
+                    <label class="validateLabel"></label>
+                </p>
+            </td>
+            <td>
+                <label class="validateIcon"></label>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <span class="js_title">附件</span>
+            </th>
+            <td colspan="2">
+                <div class="js_uploadAttach">
+                    <span style="" class="max_upload_tips color_high_light font_size_small"><em>单文件最大20M，最多6个，格式为 gif，png，bmp，jpg，jpeg，doc，docx，xlsx，pptx</em></span>
+                </div>
+                <div style="width:450px">
+                    <input type="file" class="file-upload" name="goods{$v['goodsid']}[]" accept="image/gif,image/png,image/bmp,image/jpeg,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"  onchange="add_file(this)" />
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

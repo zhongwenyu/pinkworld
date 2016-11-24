@@ -1,0 +1,128 @@
+/*通用*/
+.img{display: block;width:100%;height:100%}
+.bgea{background: #eaedf1}
+.mr18{margin-right: 18px}
+.center{text-align: center}
+.pr3{padding-right: 3px}
+.ml10{margin-left: 10px}
+.mr10{margin-right: 10px}
+.mt20{margin-top: 20px}
+.pl60{padding-left: 60px}
+.pr60{padding-right: 60px}
+.tl{text-align: left}
+.tr{text-align: right}
+.merge2{padding-left: 30px!important;}
+.merge2 .merge-mod{color:#4ea8f4}
+.pb50{padding-bottom: 50px}
+
+/*login*/
+#lgbg{width:100%;height:100%;position: relative;background: url("../images/lgbg.jpg") no-repeat;background-size:100% 100%}
+.id-login{width:360px;height:420px;position: absolute;left:50%;top:50%;margin-left:-180px;margin-top: -210px;background:#fff;border-radius:8px;box-shadow: 0 0 20px #16254d}
+.id-login h1{font-size: 24px;text-align: center;font-weight: bold;padding-bottom: 15px}
+.idwaring{width:280px;padding:5px 10px}
+.idiput{width:280px;}
+.idsub{padding:10px 30px;font-size: 16px;position: absolute;bottom:20px;left:133px}
+.ml40{margin-left: 40px}
+.mb20{margin-bottom: 20px}
+.mb10{margin-bottom: 10px}
+.input-remember{width:280px}
+.verity{padding:2px 8px!important;}
+.verity img{width:74px;height:32px}
+
+/*index*/
+.header{width:100%;height:50px;background: #09C;color:#fff}
+.hl-logo{float: left;width:180px;height:50px;padding:10px 10px;text-align: center;background: #0087b4}
+.hl-logo img{width:30px;height:30px;display: inline-block}
+.hl-logo p{line-height: 30px;padding-left: 10px;display: inline-block;font-size: 16px}
+.hl-btn{float: left;padding:0 15px;height:50px;line-height: 50px;color:#fff;border-left:1px solid #0087b4;cursor: pointer}
+.hbtn:hover{background: rgba(0,0,0,0.1);}
+.pl5{padding-left: 5px}
+.bd-ul{width:100%;position: absolute;top:50px;left:0;display: none}
+.bd-ul a{display:block;width:100%;height:40px;line-height: 40px;text-align: center;color:#666;box-shadow: 0 0 1px #f0f0f0;border:1px solid #f0f0f0;background: #fff}
+.bd-active{background:#fff;color:#666;}
+.nav-left{width:180px;float: left;margin-right:-180px;position: relative;z-index: 2}
+.section-right{width:100%;float: right}
+.srbox{margin-left: 180px;}
+.nav-box{width:100%}
+.nav-title{background: #22282e;height:40px;line-height: 40px;cursor: pointer;width:100%;border-bottom:1px solid #293038}
+.navt-left{padding-left:20px;font-size: 12px;padding-right: 5px}
+.navt-right{float: right;padding:13px 10px;color:#a0abb3}
+.nav-list{width:100%}
+.nav-list a{display: block;width:100%;height:30px;line-height: 30px;color:#fff;text-align: center;font-size: 13px;}
+.nav-hover{background: rgba(255,255,255,0.1);}
+.bg29{background: #293038;color:#fff;}
+
+/*mod*/
+.mod-box{padding:0 15px;}
+.mod-title{border-bottom: 1px solid #DDD;width:100%;padding:16px 0;position: relative}
+.mod-title h5{padding-left: 10px}
+.mod-title:before{display: block;content: "";background: #88b7e0;height:15px;width:2px;position: absolute;top:26px}
+.mod-search{width:100%;overflow: hidden;padding: 20px 0 0 0}
+.msel{width:216px;}
+.mse2{width:407px;}
+.mse3{width:76px;}
+.msea{width:196px;}
+.mhg{padding:5px}
+.glyadd{padding-right: 3px}
+.ma{display: block;padding:6px 10px}
+thead th{text-align: center}
+.mnone-ico,.merror-ico{display: inline-block;width:25px;height:25px;vertical-align: middle;margin-right: 5px}
+.mnone-ico{background: url("../images/mnone.png") no-repeat;}
+.merror-ico{background: url("../images/merror.png") no-repeat;}
+.mod-points{margin-top: 30px;text-align: center;}
+.mnone-spa,.merror-spa{display: inline-block;height:25px;line-height: 25px;font-size: 18px;color:#333;vertical-align: middle;}
+.mload-img{width:90px;}
+.mload-p{font-size: 18px;color:#333}
+.mod-page{width:100%;text-align: center}
+.mod-form{width:100%;overflow: hidden;margin-top: 20px;color:#666}
+.mform-box{margin-bottom: 15px;width:100%;float: left}
+.mform-lab{float: left;display: block;width:150px;text-align: right;height:35px;line-height: 35px;padding-right: 5px}
+.mform-inp1{float: left;width:310px;padding:0 5px;height:35px;line-height: 35px;}
+.mform-inp2{float: left;width:100px;padding:0 5px;height:35px;line-height: 35px;}
+.mform-inp3{float: left;width:400px;padding:5px;height:150px!important;line-height: 20px;}
+.mform-tarea{float: left;width:310px;padding:5px;height: 100px!important;}
+.mform-add{float: left;padding-left: 10px;height:35px;line-height: 35px;}
+.mform-sub{margin-left: 150px}
+.mod-message,.mod-replay{padding: 30px 30px 0 30px;overflow: hidden;width:1100px;text-align: center}
+.mmess-left{float: left;width:100%}
+.mmess-left,.mmess-right{margin-bottom: 5px}
+.mmess-img{width:50px;height:50px;display: block}
+.mmess-p{width: 980px;}
+.mmess-p p{background: #ccc;padding:10px;border-radius: 6px;}
+.mreplay{height:100px!important;}
+.mrbtn{margin:20px auto;}
+.mmtime{font-size: 12px;height:15px;line-height: 15px;width:100%;margin-bottom: 7px}
+.mod-content{width:100%;padding-top: 20px;overflow: hidden}
+.mcbor{border:1px solid #ddd;border-top: 0;}
+.mod-label{text-align: right;height:34px;line-height: 34px;font-weight: normal}
+.hg80{height:80px!important;}
+.mod-add{height:34px;line-height: 34px;font-weight: normal}
+.mod-btn{display: block;float: left;margin-left: 15px}
+.mod-ckbox label{display: block;float: left;height:34px;line-height: 34px;padding-right: 5px}
+.mod-ckbox input{display: block;float: left;height:30px;line-height: 30px;margin-right: 15px}
+.mpimg{width:100px;height:125px;float: left;margin-right: 15px;text-align: center}
+.mpimg img{display: block;width:100%;height:100px}
+.mpimg a{height:25px;line-height: 25px;font-size: 15px}
+.mod-photo{padding:10px 15px;overflow: hidden}
+.mpa{text-indent: -9999px;background: url("../images/add-button.jpg") no-repeat;background-size: 100%}
+.mod-submit{text-align: center;padding: 30px 0}
+.mod-addimg{width:33px;height:33px}
+.td-img{width:100px;height:100px}
+.form-view{clear:left;padding-top: 10px;margin-left: 147px;width:200px;height:200px}
+.form-view img{display: block;width:100%;height:100%}
+.form-text{float: left;width:1000px}
+.del-img{display: none}
+.mform-addnew{float: left;width:600px}
+.mfad-mod{float: left;width:100%;margin-bottom: 10px}
+
+/*单选复选框*/
+.form-check+label{float: left;display: block;margin-right: 10px;height:35px;line-height: 35px;}
+.form-check{display: none}
+.form-check:checked+label{color: #fff;background-color: #337ab7;border-color: #2e6da4;}
+.form-cbox1+label{padding:0 20px;margin-right: 10px}
+.form-cbox2+label{padding:0 10px;text-align: left;width:310px;margin-right: 10px}
+.form-cbox3+label{padding:0 10px;text-align: left;margin-right: 10px;margin-bottom: 10px}
+
+/*无限级分类*/
+.merge-add{padding:3px;margin-right: 5px;color:#fff;background: #f0ad4e;font-size: 15px;cursor: pointer}
+.sign-spa{display: inline-block;width:90px;margin-bottom: 3px;border: 1px solid #FE6A5F;color: #FE6A5F;padding:0 5px}

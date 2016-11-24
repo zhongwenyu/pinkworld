@@ -1,0 +1,78 @@
+<include file="Common/min-header" />
+<body>
+<ul class="tip_title">
+    <li class="tender_cur"><a>订单列表</a><b></b></li>
+    <div class="clear"></div>
+</ul>
+<div class="order-table">
+    <table>
+        <empty name="list">
+            <div class="order-empty">
+                没有找到相关订单！
+            </div>
+        </empty>
+        <foreach name="list" item="v">
+            <tbody>
+            <tr>
+                <td colspan="5" class="ot-th">
+                    <span class="spa-left">订单编号：{$v.ordersn}</span>
+                    <span class="spa-right">下单时间：{$v.addtime|date="Y-m-d",###}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <foreach name="v['goods']" item="g">
+                        <div class="order-goods">
+                            <img src="{$g.pic}" class="og-img" />
+                            <div class="og-info">
+                                <if condition="$g['typeid'] eq 1">
+                                    <i class="og-icon iconweixin"></i>
+                                    <elseif condition="$g['typeid'] eq 2" />
+                                    <i class="og-icon iconweibo"></i>
+                                    <elseif condition="$g['typeid'] eq 3" />
+                                    <i class="og-icon iconlive"></i>
+                                </if>
+                                <span class="spa1">{$g.name}</span>
+                                <p class="p1">{$goodsspec[$g['specid']]['specname']}</p>
+                            </div>
+                        </div>
+                    </foreach>
+                </td>
+                <td style="width:150px;text-align: center">￥{$v.goodsprice}</td>
+                <td style="width:120px;text-align: center">总数：{:count($v['goods'])}</td>
+                <td style="width:150px;text-align: center">
+                    <if condition="$v['status'] eq 0">
+                        <span style="color:#f54016">待支付</span>
+                        <elseif condition="$v['status'] eq 1" />
+                        <span style="color:#1fd612">执行中</span>
+                        <elseif condition="$v['status'] eq 2" />
+                        <span style="color:#0777f5">已完成</span>
+                    </if>
+                </td>
+                <td style="width:120px;text-align: center">
+                    <if condition="$v['status'] eq 0">
+                        <a href="{:U('Home/Cart/pay',array('orderid'=>$v['id']))}" target="_blank" class="order-btn1">立即支付</a>
+                    </if>
+                    <if condition="$v['isback'] eq 1">
+                        <a href="javascript:show_demand('{$v['feedback']}')" target="_blank" class="order-btn1">查看反馈</a>
+                    </if>
+                </td>
+            </tr>
+            </tbody>
+        </foreach>
+    </table>
+</div>
+<script>
+    function show_demand(str){
+        layer.open({
+            type: 1,
+            title:"反馈信息",
+            shade: 0,
+            skin: 'layui-layer-rim', //加上边框
+            area: ['800px', '400px'], //宽高
+            content: "<div style='padding:10px'>"+str+"</div>"
+        });
+    }
+</script>
+</body>
+</html>

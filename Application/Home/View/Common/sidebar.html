@@ -1,0 +1,97 @@
+<div class="sidebar" id="js_side_bar">
+    <div class="sidebar_shoppingCart_wrap">
+        <div class="icon_shoppingCart sidebar_icon js_shoppingCart" id="js_cart_icon_div" <empty name="user">onclick="onlogin()"<else/>onclick="show_cart(this)"</empty> >
+            <a href="javascript:void(0);"> 选<br>号<br>车</a>
+            <span class="shoppingCart_num js_cart_num" id="cartnum">
+                <empty name="cart">
+                    0
+                    <else />{:count($cart)}
+                </empty>
+            </span>
+        </div>
+        <div class="shoppingCart_on" id="js_cart_list_div">
+            <div class="shoppingCart_on_h">
+                <a href="javascript:void(0)" class="fr js_close" onclick="close_cart()"><img src="__PUBLIC__/images/uploadify-cancel.png"> </a>
+            </div>
+            <div id="ajax_return"></div>
+            <div class="shoppingCart_summary">
+                <div class="shoppingCart_count clearfix">
+                    <div class="fl">
+                        <dl>
+                            <dt><span>总：<span class="text_highlight big_size js_cart_num">{:count($cart)}</span>个</span></dt>
+                            <dd><a href="javascript:;" id="js_delete_all" style="display: none;">全部清空</a></dd>
+                        </dl>
+                    </div>
+                    <div class="fr">
+                        <a href="javascript:void(0);" onclick="del_allcart()" class="button btn_normal_common js_full_screen"><span class="btn_wrap">全部删除</span></a>
+                        <a href="{:U('Home/Cart/cart')}" class="button btn_normal_important js_full_screen" style="margin-left:10px"><span class="btn_wrap">立即推广</span></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="icon_border">
+        <!-- 联系销售经理 开始 -->
+        <div class="sidebar_icon icon_telephone js_notice_alert sidebar_icon_selected">
+            <a href="javascript:;"></a>
+            <div class="sidebarMain_grid contactMain js_notice_content" style="display: none;">
+                <h4>{$config.servicepos }</h4>
+                <img src="__PUBLIC__/images/notice_close.png" width="9" class="sidebar_notice_close js_content_close">
+                <ul>
+                    <li class="li_01"><em>{$config.servicename}</em></li>
+                    <li class="li_02"><em>{$config.servicephone}</em></li>
+                    <li class="li_03"><em><a target="_blank" class="saleqq"  href="http://wpa.qq.com/msgrd?v=3&uin={$config.serviceqq}&site=qq&menu=yes">{$config.serviceqq}</a>
+                    </em></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 联系销售经理 结束 -->
+
+        <!-- 投诉建议 开始 -->
+
+        <div class="sidebar_icon icon_writing js_notice_alert"><a href="javascript:;">投诉建议</a>
+            <div class="complaintsMain sidebarMain_grid js_notice_content">
+                <h4>投诉建议</h4>
+                <form id="feedbackForm" action="http://chuanbo.weiboyi.com/hwauth/email/email">
+                    <input name="to" id="to" type="hidden" class="tt" value="supporta@weiboyi.com">
+                    <input name="cc" id="cc" type="hidden" class="tt" value="" style="width: 375px;">
+                    <textarea name="text" id="text"></textarea>
+            <span class="feedbackContent_msg">
+                 <span id="feedbackMsg">
+                    您还可以输入
+                    <span id="feedbackLeftChar">300</span>
+                    个字
+                 </span>
+                 <span id="feedbackWarning">
+                    已超出
+                    <span id="feedbackExceedChar">20</span>
+                    个字
+                 </span>
+            </span>
+            <span class="fr">
+                <a href="javascript:void(0)" class="button btn_small_important suggest_submit">
+                    <span class="btn_wrap">确定</span>
+                </a>
+                <a href="javascript:void(0)" class="button btn_small_common suggest_cancel js_content_cancel">
+                    <span class="btn_wrap">取消</span>
+                </a>
+            </span>
+                    <input type="hidden" name="web_csrf_token" value="57d40e0745f6e" id="web_csrf_token"></form>
+            </div>
+        </div>
+        <!-- 投诉建议 结束 -->
+
+        <div class="sidebar_icon icon_servicecontent js_servicecontent js_notice_alert">
+            <a href="javascript:;" class="" title="服务内容"></a>
+            <div class="serviceContentMain sidebarMain_grid js_notice_content js_sub_elem">
+                <h4>服务内容</h4>
+                <img src="__PUBLIC__/images/notice_close.png" width="9" class="sidebar_notice_close js_content_close">
+                <p class="color_default">{$config.servicecontent}</p>
+            </div>
+        </div>
+    </div>
+    <div class="backTo_front" onclick="goTop()">
+        TOP
+    </div>
+</div>

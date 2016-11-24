@@ -1,0 +1,27 @@
+<include file="Common/min-header" />
+<body>
+<ul class="tip_title">
+    <li class="tender_cur"><a>资料编辑</a><b></b></li>
+    <div class="clear"></div>
+</ul>
+<form action="{:U('Home/User/useredit')}" id="form1" method="post" onsubmit="return false;">
+    <div class="user-form">
+        <div class="uf-mod">
+            <span class="spa1">姓名：</span>
+            <input type="text" name="username" value="{$user.username}" />
+        </div>
+        <div class="uf-mod">
+            <span class="spa1">手机：</span>
+            <input type="text" name="phone" value="{$user.phone}" />
+        </div>
+        <div class="uf-mod">
+            <span class="spa1">邮箱：</span>
+            <input type="text" name="email" value="{$user.email}" />
+        </div>
+        <div class="uf-mod" style="padding-top: 15px">
+            <a href="javascript:void(0)" class="uf-sub" onclick="ajax_add('form1','{:U('Home/user/useredit')}')">保存</a>
+        </div>
+    </div>
+</form>
+</body>
+</html>

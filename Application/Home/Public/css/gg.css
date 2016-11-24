@@ -1,0 +1,17 @@
+.left_nav { float: left;overflow: hidden; padding: 20px 0 0 1px; width:180px; }
+.left_nav ul{ padding: 0px 20px}
+.left_nav ul li span{height: 35px;line-height: 35px;font-weight: bold;text-align: left;display: block;color: #ea544a; }
+.left_nav ul li span em { border-left: 4px solid #ea544a; padding-left: 6px;font-style: normal;font-size: 14px}
+/*.left_nav ul li.cur span{background: #ea544a;color: #fff}*/
+.left_nav ul li dl{margin-bottom: 0}
+.left_nav ul li dl dd{height: 35px;line-height: 35px;margin-bottom: 5px}
+.left_nav ul li dl dd a { color: #6f6f6f; display: block; text-decoration:none;text-align:left;padding:0 0 0 15px;}
+.left_nav ul li dl dd.cur a,.left_nav ul li dl dd a:hover { color: #ea544a;background: #f1f1f1}
+.left_nav ul li dl dd i{padding-right: 10px}
+.tip_title { border-bottom: 2px solid #ebebeb;  margin: 0;padding: 0;height: 60px}
+.tip_title li { float: left; line-height:22px; padding:20px 10px;position: relative;z-index: 2; font-weight:bold;}
+.tip_title li a {color: #666;}
+.tip_title li.tender_cur a,.tip_title li a:hover { color: #ea544a; text-decoration:none;}
+.tip_title li b{border-bottom: 3px solid #ea544a;position: absolute;bottom: 2px;left: 0;display: none;width: 100%;}
+.tip_title li.tender_cur b{display: block}
+.tip_title .tender_cur .badge{color: #fff;background-color: #d9534f;border-color: #d9534f;}

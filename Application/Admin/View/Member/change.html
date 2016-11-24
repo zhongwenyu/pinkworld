@@ -1,0 +1,33 @@
+<include file="Public/header" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>会员资料修改</h5>
+    </div>
+    <div class="mod-form">
+        <form action="{:U('Admin/Member/pwdchange')}" method="post" id="form1">
+            <div class="mform-box form-group">
+                <label for="username" class="mform-lab">姓名：</label>
+                <input type="text" class="form-control mform-inp1" name="username" id="username" value="{$user.username}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="phone" class="mform-lab">手机：</label>
+                <input type="text" class="form-control mform-inp1" name="phone" id="phone" value="{$user.phone}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="email" class="mform-lab">邮箱：</label>
+                <input type="text" class="form-control mform-inp1" name="email" id="email" value="{$user.email}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="password" class="mform-lab">密码：</label>
+                <input type="text" class="form-control mform-inp1" name="password" id="password" value="" />
+            </div>
+            <div class="mform-box">
+                <input type="hidden" name="userid" value="{$userid}" />
+                <input type="button" onclick="ajax_add('form1','{:U('Admin/Member/change')}')" class="btn btn-primary mform-sub" value="修改" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

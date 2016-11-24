@@ -1,0 +1,40 @@
+<empty name="cart">
+    <div class="shoppingCart_empty" id="js_empty_cart_div">
+        <div class="shoppingCart_empty_main">
+            <img src="__PUBLIC__/images/shoppingCart_empty.png" class="main_img">
+            <p>
+                选号车内空空如也，<br>赶紧去挑选心仪的账号吧~
+            </p>
+        </div>
+    </div>
+    <else />
+    <div class="js_shoppingCart_list_wrap">
+        <div id="wrapper" class="sc_dataList_wrap">
+            <div id="scroller" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                <ul class="shoppingCart_list" id="js_cart_list_ul">
+                    <foreach name="cart" item="v">
+                        <li class="clearfix">
+                            <div class="accountHeader text_center relative">
+                                <img src="" class="accountHeader_avatar">
+                                <if condition="$v['type'] eq 1">
+                                    <img src="__PUBLIC__/images/icon_s_weixin.png" class="shoppingCart_platform">
+                                    <elseif condition="$v['type'] eq 2"/>
+                                    <img src="__PUBLIC__/images/icon_s_sina.png" class="shoppingCart_platform">
+                                    <elseif condition="$v['type'] eq 3"/>
+                                    <img src="__PUBLIC__/images/icon_s_miaopai.png" class="shoppingCart_platform">
+                                </if>
+                            </div>
+                            <div class="accountWrap">
+                                <div class="accountInner">
+                                    <p class="accountNick">一个人听晚安</p>
+                                    <p class="color_light">
+                                        <span class="accountName font_size_small"> 微信号：<em title="saysayaa">saysayaa</em>  </span> <img class="fr shoppingCart_delete js_cart_delete" src="__PUBLIC__/images/icon_del.png"></p>
+                                </div>
+                            </div>
+                        </li>
+                    </foreach>
+                </ul>
+            </div>
+            <div class="iScrollVerticalScrollbar iScrollLoneScrollbar" style="position: absolute; z-index: 9999; width: 7px; bottom: 2px; top: 2px; right: 1px; overflow: hidden; pointer-events: none;"><div class="iScrollIndicator" style="box-sizing: border-box; position: absolute; border: 1px solid rgba(255, 255, 255, 0.901961); border-radius: 3px; width: 100%; transition-duration: 0ms; display: none; height: 701px; transform: translate(0px, 0px) translateZ(0px); transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); background: rgba(0, 0, 0, 0.498039);"></div></div></div>
+    </div>
+</empty>

@@ -1,0 +1,97 @@
+<notempty name="user">
+    <div class="header_info">
+        <div class="content">
+            <span class="header_info_name">您好：<a href="{:U('Home/User/index')}"><span id="crt_username">{$user.account}</span></a></span>
+            <a href="{:U('Home/User/index')}">会员中心</a>
+            <a href="{:U('Home/User/lgout')}">退出</a>
+        </div>
+    </div>
+</notempty>
+<div class="nav_box">
+    <div class="content clearfix">
+        <div class="nav_top">
+            <a class="logo2x fl" href="http://www.ftx9.com"><img width="180" src="__PUBLIC__/images/logo_2x.png"></a>
+            <div class="nav_list_box fl">
+                <a class="nav_list_current" href="javascript:void(0)">
+                    <if condition="$typeid eq 1">
+                        <img class="icon" width="29" src="__PUBLIC__/images/nav_wechat_2x.png">
+                        <span>微信公众号</span>
+                        <elseif condition="$typeid eq 2"/>
+                        <img class="icon" width="29" src="__PUBLIC__/images/nav_weibo_2x.png"/>
+                        <span>新浪微博</span>
+                        <elseif condition="$typeid eq 3"/>
+                        <img class="icon" width="29" src="__PUBLIC__/images/nav_zimeiti_hover_2x.png"/>
+                        <span>视频自媒体</span>
+                    </if>
+
+                    <img class="arrow_down_nav valign_middle" width="21" src="__PUBLIC__/images/nav_arrow_down_2x.png">
+                </a>
+                <div class="nav_list_all">
+                    <dl>
+                        <dt>
+                            <img width="19" src="__PUBLIC__/images/nav_location_2x.png">
+                            <a href="{:U('Home/User/index')}">查看账号</a>
+                        </dt>
+                        <dd>
+                            <a href="/weixin" target="_blank">微信公众号</a>
+                            <i></i>
+                            <a href="/weibo" target="_blank">新浪微博</a>
+                            <i></i>
+                            <a href="/shipin" target="_blank">视频自媒体</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img width="18" src="__PUBLIC__/images/nav_calendar_2x.png">
+                            <a href="{:U('Home/User/index')}" target="_blank">订单管理</a>
+                        </dt>
+                        <dd>
+                            <a href="{:U('Home/User/index')}" target="_blank">待支付</a>
+                            <i></i>
+                            <a href="{:U('Home/User/index')}" target="_blank">待执行</a>
+                            <i></i>
+                            <a href="{:U('Home/User/index')}" target="_blank">已完成</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img width="14" src="__PUBLIC__/images/nav_paper_2x.png" class="paper">
+                            <a class="nav_clear_border" href="{:U('Home/Cart/cart')}" target="_blank">选号车</a>
+                        </dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img width="15" src="__PUBLIC__/images/nav_user_2x.png" class="user">
+                            <a href="{:U('Home/User/index')}" target="_blank">个人中心</a>
+                        </dt>
+                        <dd>
+                            <a target="_blank" href="{:U('Home/User/index')}">密码修改</a>
+                            <i></i>
+                            <a target="_blank" href="{:U('Home/User/index')}">资料编辑</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="nav_top_link fl">
+                <a target="" href="/weixin" class="color_high_light">微信公众号<img src="__PUBLIC__/images/new_red.png" width="28" class="tags"></a>
+                <a target="" href="/shipin" class="color_high_light">视频自媒体<img src="__PUBLIC__/images/new_red.png" width="28" class="tags"></a>
+                <a target="" href="/weibo">新浪微博</a>
+                <i></i>
+                <a target="" href="">朋友圈</a>
+                <i></i>
+                <a target="" href="">微播圈</a>
+                <i></i>
+                <a target="" href="">活动管理</a>
+                <i></i>
+            </div>
+            <empty name="user">
+                <div class="nav_top_btn">
+                    <a target="_blank" href="/regist">注册</a>
+                    <a target="_blank" href="http://www.ftx9.com">登录</a>
+                </div>
+            </empty>
+        </div>
+    </div>
+</div>

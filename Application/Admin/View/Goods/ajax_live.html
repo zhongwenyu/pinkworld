@@ -1,0 +1,43 @@
+<foreach name="goods" item="v">
+    <tr>
+        <td class="center">{$v.id}</td>
+        <td class="center">{$v.name}</td>
+        <td class="center">
+            <img src="{$v.pic}" class="td-img" />
+        </td>
+        <td class="center">{$v.area}</td>
+        <td class="center">{$v.sex}</td>
+        <td class="center">
+            <if condition="$v['isrz']">是
+                <else />否
+            </if>
+        </td>
+        <td class="center">
+            <if condition="$v['isyy']">是
+                <else />否
+            </if>
+        </td>
+        <td class="center">{$v.certify}</td>
+        <td class="center">{$v.fans}</td>
+        <td class="center">{$v.reading}</td>
+        <td class="center">
+            <if condition="$v['fansex'] eq 0">无
+                <elseif condition="$v['fansex'] eq 1" />男
+                <elseif condition="$v['fansex'] eq 2" />女
+            </if>
+        </td>
+        <td class="center">{$v.liked}</td>
+        <td class="center">{$v.comment}</td>
+        <td class="center">
+            <img src="__PUBLIC__/images/<if condition='$v[isshow]'>yes.png<else/>no.png</if>" onclick="change_show('goods','id','{$v[id]}','isshow',this)" />
+        </td>
+        <td class="center">{$v.sign}</td>
+        <td class="center">
+            <input type="text" class="form-control" style="height:30px" value="{$v.sort}" onblur="change_sort('goods','id','{$v[id]}','sort',this)" />
+        </td>
+        <td>
+            <a href="{:U('Admin/Goods/add_live',array('act'=>'edit'))}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil pr3"></span>编辑</a>
+            <a href="javascript:void(0);" onclick="del('goods','id','{$v[id]}')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash pr3"></span>删除</a>
+        </td>
+    </tr>
+</foreach>

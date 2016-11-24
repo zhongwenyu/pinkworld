@@ -1,0 +1,114 @@
+<empty name="list">
+    <div class="content">
+        <div class="search_station_wrap clearfix">
+            <ul data-bind="" class="clearfix">
+                <li>
+                    <img src="__PUBLIC__/images/list_info_2x.png" width="14" class="valign_middle">
+                    您设置的账号要求下，可以推荐的优质账号过少，您可以清空或重新设置账号要求
+                </li>
+            </ul>
+        </div>
+    </div>
+</empty>
+<table class="list_table" width="100%">
+    <foreach name="list" item="v">
+        <tbody>
+        <tr>
+            <td style="width:30px" class="account_check">
+                <input type="checkbox" name="cart{$v.id}" data-id="{$v.id}" onclick="checkbox_cart({$v.id},1,this,event,190)">
+            </td>
+            <td width="300">
+                <div class="account_info" style="width: 380px; padding-right: 20px;">
+                    <p class="account_head">
+        <span>
+            <a href="{$v.link}" rel="nofollow" style="width: 56px; height: 56px; overflow: hidden; display: block;">
+                <img class="valign_middle js_avatar" src="{$v.pic}" id="goodsimg{$v['id']}" style="width: 56px; height: auto;">
+            </a>
+        </span>
+                        <if condition="$v['isyy'] eq 1"><span class="account_order"></span></if>
+                    </p>
+                    <div class="account_info_wrap">
+                        <div class="account_info_others">
+                            <p class="account_name">
+                                <if condition="$v['platcatid'] eq 24">
+                                    <span class="icon_list_platform icon_list_meipai valign_middle"></span>
+                                    <elseif condition="$v['platcatid'] eq 45"/>
+                                    <span class="icon_list_platform icon_list_kuaishou valign_middle"></span>
+                                    <elseif condition="$v['platcatid'] eq 46"/>
+                                    <span class="icon_list_platform icon_list_bilibili valign_middle"></span>
+                                    <elseif condition="$v['platcatid'] eq 84"/>
+                                    <span class="icon_list_platform icon_list_youku valign_middle"></span>
+                                    <elseif condition="$v['platcatid'] eq 44"/>
+                                    <span class="icon_list_platform icon_list_yingke valign_middle"></span>
+                                    <elseif condition="$v['platcatid'] eq 82"/>
+                                    <span class="icon_list_platform icon_list_yizhibo valign_middle"></span>
+                                    <elseif condition="$v['platcatid'] eq 84"/>
+                                    <span class="icon_list_platform icon_list_huajiao valign_middle"></span>
+                                    <else />
+                                    <span class="icon_list_platform icon_list_miaopai valign_middle"></span>
+                                </if>
+                                <if condition="$v['isrz'] eq 1"><img class="valign_middle" width="17" src="__PUBLIC__/images/v_miaopai_2x_v2.png"></if>
+                                <a href="{$v.link}" rel="nofollow" target="_blank">{$v.name}</a>
+                                <if condition="$v['sex'] eq 1">
+                                    <img src="__PUBLIC__/images/male_2x.png" width="15" class="valign_middle">
+                                    <else />
+                                    <img src="__PUBLIC__/images/female_2x.png" width="15" class="valign_middle">
+                                </if>
+                                <img src="__PUBLIC__/images/area_2x.png" width="11" class="valign_middle icon_area">
+                                <span class="valign_middle" title="{$v.area}">{$v.area}</span>
+                            </p>
+                            <div class=" account_moments">
+                                <span class="account_weixin_name font_size_small valign_middle" title="{$v.instro}">{$v.instro}</span>
+                            </div>
+                            <notempty name="v['sign']">
+                                <div class="font_size_small">
+                                    <foreach name="v['sign']" item="s">
+                                        <a class="account_original text_center valign_middle" href="javascript:">{$sign[$s['sign']]['signname']}</a>
+                                    </foreach>
+                                </div>
+                            </notempty>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td width="75">
+                <div class="account_others">
+                    <span class="account_others_title">粉丝数</span>
+                    <span class="account_others_content">{$v.fans}万</span>
+                </div>
+            </td>
+            <td>
+                <div class="account_others">
+                <span class="account_others_title">参考报价</span>
+                <div class="account_list_data">
+                    <foreach name="v['spec']" item="p">
+                        <span>{$spec[$p['specid']]['specname']}:</span> <b class="color_high_light money">￥{$p.price}</b><br>
+                    </foreach>
+                </div>
+            </div>
+            </td>
+            <td width="130">
+                <span class="account_others_title">平均播放数</span>
+                <span class="account_others_content">{$v.reading}</span><br>
+            </td>
+            <td>
+                <div class="account_others">
+                    <span class="account_others_title">平均互动数</span>
+                    <div class="account_others_content account_use_times">
+                        <span>点赞数：</span><em>{$v.liked}</em>
+                        <br>
+                        <span>评论：</span><em>{$v.comment}</em>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="account_others">
+                    <span class="account_others_title">配合度</span>
+                    <a href="/weibo/{$v['id']}" target="_blank" class="account_others_content account_addimg relative"><img width="13" src="__PUBLIC__/images/group_2x.png">账号详情</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </foreach>
+</table>
+<div style="width:100%;text-align: center;overflow: hidden">{$page}</div>

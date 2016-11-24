@@ -1,0 +1,92 @@
+<include file="Public/header" />
+<body>
+<div class="mod-box">
+    <div class="mod-title">
+        <h5>
+            <if condition="$action eq 'add'">新增分类
+                <else />编辑分类
+            </if>
+        </h5>
+    </div>
+    <div class="mod-form">
+        <form action="{:U('Admin/Goods/add_cat')}" method="post" id="form1">
+            <div class="mform-box form-group">
+                <label for="catname" class="mform-lab">分类名称：</label>
+                <input type="text" class="form-control mform-inp1" name="catname" id="catname" value="{$catdetail.catname}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="cattitle" class="mform-lab">分类标题：</label>
+                <input type="text" class="form-control mform-inp1" name="cattitle" id="cattitle" value="{$catdetail.cattitle}" />
+            </div>
+            <div class="mform-box form-group">
+                <label for="catkeyword" class="mform-lab">分类关键词：</label>
+                <textarea class="form-control mform-inp1" name="catkeyword" id="catkeyword">{$catdetail.catkeyword}</textarea>
+            </div>
+            <div class="mform-box form-group">
+                <label for="catinfo" class="mform-lab">分类描述：</label>
+                <textarea class="form-control mform-inp1" name="catinfo" id="catinfo">{$catdetail.catinfo}</textarea>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">分类图标：</label>
+                <input type="text" class="form-control mform-inp1 original_img3" name="img" value="{$catdetail.img}" placeholder="可留空" />
+                <a href="javascript:void(0)" onclick="GetUploadify('catimg','frm2','1','4MB','call_back','original_img3')" class="btn btn-default mod-btn">上传</a>
+                <a href="javascript:void(0)" onclick="del_upimg('original_img3',this)" class="btn btn-default mod-btn del-img">删除</a>
+                <div class="form-view">
+                    <empty name="catdetail">
+                        <img src="__PUBLIC__/images/pic-moren.jpg" class="original_img3" />
+                        <else />
+                        <img src="{$catdetail.img}" class="original_img3" />
+                    </empty>
+                </div>
+            </div>
+            <div class="mform-box form-group">
+                <label for="typeid" class="mform-lab">选择父分类：</label>
+                <select class="form-control mform-inp1" name="typeid" id="typeid">
+                    <foreach name="goodstype" item="v">
+                        <option value="{$v.id}" <notempty name="catdetail"><if condition="$catdetail['typeid'] eq $v['id']">selected="selected"</if></notempty>>{$v.name}</option>
+                    </foreach>
+                    <option value="0">平台分类</option>
+                </select>
+            </div>
+            <div class="mform-box form-group">
+                <label class="mform-lab">是否显示：</label>
+                <input type="radio" name="isshow" id="isshow" class="form-check form-cbox1" value="1" <empty name="catdetail">checked<else /><if condition="$catdetail['isshow'] eq 1">checked</if></empty> />
+                <label for="isshow" class="btn btn-default">是</label>
+                <input type="radio" name="isshow" id="noshow" class="form-check form-cbox1" value="0" <notempty name="catdetail"><if condition="$catdetail['isshow'] eq 0">checked</if></notempty> />
+                <label for="noshow" class="btn btn-default">否</label>
+            </div>
+            <div class="mform-box">
+                <input type="hidden" name="action" value="{$action}" />
+                <input type="hidden" name="catid" value="{$catid}" />
+                <input type="button" onclick="ajax_add('form1','{:U('Admin/Goods/add_cat')}')" class="btn btn-primary mform-sub" value="保存" />
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    /*
+     * 图片上传回调函数
+     */
+    function call_back(url,classname){
+        $("input."+classname).val(url).siblings(".del-img").show();
+        $("img."+classname).attr("src",url);
+    }
+
+    /*
+     * 上传图片删除函数
+     */
+    function del_upimg(classname,obj){
+        $.ajax({
+            type:'get',
+            data:{filename:$("input."+classname).val(),action:"del"},
+            url:"{:U('Admin/Uploadify/delImg')}",
+            success:function(data){
+                $("input."+classname).val('');
+                $("img."+classname).attr("src","__PUBLIC__/images/pic-moren.jpg");
+                $(obj).hide();
+            }
+        })
+    }
+</script>
+</body>
+</html>
